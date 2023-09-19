@@ -3,6 +3,7 @@
     font-family: 'Arvo', serif;
     font-family: 'Lora', serif;
     font-family: 'Roboto', sans-serif;
+   
 }
 :root{
     --color-1:#fefefe;
@@ -10,17 +11,25 @@
     --color-3: #9658a0;
     --color-4:#898982;
 }
+body {
+    width: 100%;
+}
 --NavBar--
+#img-logo {
+    width: 100px;
+}
 header {
     width: 100%;
 }
 .nav ul {
     text-decoration: none;
     margin-right: 10%;
+    list-style: none;
 }
 .nav-li {
  display: inline-flex;  
   float: inline-end;
+  list-style: none;
     
    
 }
@@ -53,17 +62,6 @@ nav a:hover{
     margin-top: 2%;
 }
 
-#icons-contato {
-    width: 50px;
-  
-    border-radius: 10%;
-    float:right;
-    padding: 10%;
-    margin-left: 20px;
-    font-size: 15px;
-    position: relative;
-    display:block
-}
 --fim--
 
 --Carousel--
@@ -90,9 +88,10 @@ nav a:hover{
     margin-top: 60px;
    align-content: center;
     padding: auto;
+    margin-bottom: 50px;
 }
 
-.h3-promocoes {
+.h5-promocoes {
     color: var(--color-4);
     text-decoration: solid color var(--color-3);
     display: flex;
@@ -148,17 +147,87 @@ strong {
 }
 
 .destinos-home {
- 
-    margin: 30px 30px 500px ;
+    
+    margin: 30px ;
 }
 #destinos-home {
     margin-top: 60px;
-  align-content: center;
-    padding: 10px 10px 10px 30px;
+    align-content: center;
+     padding: auto;
+   
+ }
+
+
+/*footer*/
+ footer {
+    width: 100%;
+    margin-top: 300px;
+    align-items: center;
+    text-align: center;
+ }
+.container-footer {
+  
+    max-width: 1400px;
+    padding: 0 4%;
+    margin:auto;
+    align-items: center;
+   
+
 }
-/* footer */
+.row-footer {
+    display: flex;
+    flex-wrap:wrap;
+
+}
+.footer-col {
+    width: 25%;
+    
+
+}
+.footer-col h4 {
+    font-size: 18px;
+    color: blueviolet;
+    margin-bottom:20px;
+    position:relative;
+    text-transform:uppercase;
+    margin-left: 36px;
+    margin-top: 10%;
+}
+.footer-col ul {
+    list-style: none;
+
+}
+.footer-col ul li {
+    margin:-1px ;
+    
+}
+.footer-col ul li a {
+    font-size:15px ;
+    color: var(--color-3);
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+  
+   
+}
+.footer-col ul li a:hover {
+    color: var(--color-3);
+  
+}
+.footer-col  p {
+    font-size:15px ;
+    color: var(--color-3);
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+  
+}
+.footer-col ul li p {
+    margin:-1px ;
+    
+}
+
 
 
 /*fim*/
-
-

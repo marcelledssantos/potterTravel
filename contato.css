@@ -1,0 +1,167 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Arvo', serif;
+    font-family: 'Lora', serif;
+    font-family: 'Roboto', sans-serif;
+   
+}
+:root{
+    --color-1:#fefefe;
+    --color-2:#eadec5;
+    --color-3: #9658a0;
+    --color-4:#898982;
+}
+body {
+    width: 100%;
+}
+--NavBar--
+#img-logo {
+    width: 100px;
+}
+header {
+    width: 100%;
+}
+.nav ul {
+    text-decoration: none;
+    margin-right: 10%;
+    list-style: none;
+}
+.nav-li {
+ display: inline-flex;  
+  float: inline-end;
+  list-style: none;
+    
+   
+}
+.nav-a {
+    text-transform: uppercase; 
+    padding: 20px;
+    margin-top: 0;
+    text-decoration: none;
+    color: var(--color-3)   
+}
+
+nav a:hover{
+    color: var(--color-4);
+    font-weight: bold;
+   
+}
+
+.nav-header {
+    float: left;
+    margin-left: 2%;
+    width: 100%;
+    background-color: var(--color-1);
+}
+#input-header {
+    width: 550px;
+    margin-top: 2%;
+}
+
+.input-group-append {
+    margin-top: 2%;
+}
+
+--fim--
+
+.container-faleConosco {
+justify-content: center;
+align-content: center;
+text-align: center;
+align-items: center;
+align-self: center;
+}
+
+.form-group {
+    width: 50%;
+    text-align: center;
+}
+
+.form-control {
+    align-content: center;
+    align-content: center;
+}
+
+.h2-contato {
+ margin-top: 8%;
+ font-size: x-large;
+text-align: center;
+color:var(--color-3);
+text-transform: uppercase;
+}
+
+
+
+/*footer*/
+ footer {
+    width: 100%;
+    margin-top: 300px;
+    align-items: center;
+    text-align: center;
+ }
+.container-footer {
+  
+    max-width: 1400px;
+    padding: 0 4%;
+    margin:auto;
+    align-items: center;
+   
+
+}
+.row-footer {
+    display: flex;
+    flex-wrap:wrap;
+
+}
+.footer-col {
+    width: 25%;
+    
+
+}
+.footer-col h4 {
+    font-size: 18px;
+    color: blueviolet;
+    margin-bottom:20px;
+    position:relative;
+    text-transform:uppercase;
+    margin-left: 36px;
+    margin-top: 10%;
+}
+.footer-col ul {
+    list-style: none;
+
+}
+.footer-col ul li {
+    margin:-1px ;
+    
+}
+.footer-col ul li a {
+    font-size:15px ;
+    color: var(--color-3);
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+  
+   
+}
+.footer-col ul li a:hover {
+    color: var(--color-3);
+  
+}
+.footer-col  p {
+    font-size:15px ;
+    color: var(--color-3);
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+  
+}
+.footer-col ul li p {
+    margin:-1px ;
+    
+}
+
+
+
+/*fim*/
