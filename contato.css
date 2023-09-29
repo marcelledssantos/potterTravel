@@ -15,9 +15,6 @@ body {
     width: 100%;
 }
 --NavBar--
-#img-logo {
-    width: 100px;
-}
 header {
     width: 100%;
 }
@@ -53,6 +50,16 @@ nav a:hover{
     width: 100%;
     background-color: var(--color-1);
 }
+.navbar h5{
+    display: flex;
+    color: black;
+    text-transform: uppercase; 
+}
+.navbar img {
+    display: flex;
+    width: 40px;
+}
+
 #input-header {
     width: 550px;
     margin-top: 2%;
@@ -64,32 +71,35 @@ nav a:hover{
 
 --fim--
 
-.container-faleConosco {
-justify-content: center;
-align-content: center;
-text-align: center;
-align-items: center;
-align-self: center;
-}
-
-.form-group {
-    width: 50%;
+.container-md {
+    margin-top: 10%;
     text-align: center;
+    color:var(--color-3);
+ 
+   
 }
 
-.form-control {
-    align-content: center;
-    align-content: center;
+.container-md h3 {
+    text-transform: uppercase;
+    margin-top: 10%;
+    text-align: center;
+    margin-bottom: 5%;
+    color: var(--color-3);
 }
 
-.h2-contato {
- margin-top: 8%;
- font-size: x-large;
-text-align: center;
-color:var(--color-3);
-text-transform: uppercase;
+.mb-3 {
+    width: 50%;
+ margin-left: 25%;
 }
 
+.botao-contato {
+ margin-top: 3%;
+ margin-left: 45%;
+ border-radius: 10%;
+
+ background-color: var(--color-1);
+ border-color: var(--color-2);
+}
 
 
 /*footer*/
@@ -120,7 +130,7 @@ text-transform: uppercase;
 }
 .footer-col h4 {
     font-size: 18px;
-    color: blueviolet;
+    color: black;
     margin-bottom:20px;
     position:relative;
     text-transform:uppercase;

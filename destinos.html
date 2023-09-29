@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="Pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,138 +23,179 @@
     <!--Nav bar -->
   
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul  class="nav-ul">
-              <li class="nav-li">
-                <a class="nav-a" href="index.html">Home</a>
-              </li>
-              <li class="nav-li">
-                <a class="nav-a" href="destinos.html">Destinos</a>
-              </li>
-              <li class="nav-li">
-                <a class="nav-a" href="promocoes.html">Promoções</a>
-              </li>
-              <li class="nav-li">
-                <a class="nav-a" href="contato.html">Fale Conosco</a>
-              </li>
-              <li class="nav-li">
-                <div class="input-group">
-                  <input id = "input-header"class="form-control" type="search" placeholder="Buscar destino.." aria-label="Search" style="border-right: none;">
-                  <div class="input-group-append">
-                    <div class="input-group-text" style="background-color: #FFF"><i class="fas fa-search"></i></div>
-                  </div>
+      <img src="imagens/aviao.png">
+      <h5>Potter Travel</h5>
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
+          <ul  class="nav-ul">
+            <li class="nav-li">
+              <a class="nav-a" href="index.html">Home</a>
+            </li>
+            <li class="nav-li">
+              <a class="nav-a" href="destinos.html">Destinos</a>
+            </li>
+            <li class="nav-li">
+              <a class="nav-a" href="promocoes.html">Promoções</a>
+            </li>
+            <li class="nav-li">
+              <a class="nav-a" href="contato.html">Fale Conosco</a>
+            </li>
+            <li class="nav-li">
+              <div class="input-group">
+                <input id = "input-header"class="form-control" type="search" placeholder="Buscar destino.." aria-label="Search" style="border-right: none;">
+                <div class="input-group-append">
+                  <div class="input-group-text" style="background-color: #FFF"><i class="fas fa-search"></i></div>
                 </div>
-                </div>
-              </li>
-          </div>
+              </div>
+              </div>
+            </li>
         </div>
-      </nav>
-      <div class="ofertas-home">
-        <div id="ofertas-home">
-          <div class="h5-promocoes">
-            <h5>Os melhores destinos é na <strong>Potter Travel</strong></h5>
-          </div>
-          <div class="row row-cols-1 row-cols-md-2 g-4">
-            <div class="col">
-              <div class="card">
-                <img src="imagens/Lisboa.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
-                  <p class="text-center fw-semibold fs-4"><strong>Lisboa</strong></p>
-                  <p class="card-text"></p>
-                  <button id="botao-card-promo"><a href="#">Conferir</a></button>
-                </div>
+      </div>
+    </nav>
+
+
+    <div class="container-fluid-pesquisa">
+      <div id="fixa">      
+        <label class="label-principal">Origem</label>
+        <input class="input-pesquisa" type="text"placeholder="ex. Rio de Janeiro-RJ">
+        
+        <label class="label">Destino</label>
+        <input class="input-pesquisa" type="text" placeholder="ex. São Paulo-SP">
+
+        <label class="label">Partida</label>
+        <input class="input-numerico" type="text" placeholder="dd/mm/aaaa">
+        
+        <label class="label">Chegada</label>
+        <input class="input-numerico" type="text" placeholder="dd/mm/aaaa">
+        
+        <label class="label">Quartos</label>
+        <input class="input-numerico" type="text"placeholder="Nº de quartos">
+        
+        <input class="botao-pesquisa" type="submit" value="Buscar">
+        </div>
+    </div>
+       
+            
+      
+        
+    <!--fim-->
+
+
+     
+      <div class="container-md-destinos-internacionais">
+        <div class="container-md">
+          <div class="destinos-home-2">
+            <div id="destinos-home">
               </div>
-            </div>
-          
-              <div class="col">
-                <div class="card">
-                  <img src="imagens/Lisboa.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
-                    <p class="text-center fw-semibold fs-4"><strong>Lisboa</strong></p>
-                    <p class="card-text"></p>
-                    <button id="botao-card-promo"><a href="#">Conferir</a></button>
-                  </div>
-                </div>
-              </div>
-          
+              <div class="row row-cols-1 row-cols-md-2 g-8">
                 <div class="col">
                   <div class="card">
-                    <img src="imagens/Lisboa.jpg" class="card-img-top" alt="...">
+                    <img src="imagens/pexels-maria-isabella-bernotti-1049298.jpg" class="card-img-top" alt="">
                     <div class="card-body">
-                      <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
-                      <p class="text-center fw-semibold fs-4"><strong>Lisboa</strong></p>
-                      <p class="card-text"></p>
-                      <button id="botao-card-promo"><a href="#">Conferir</a></button>
+                     
+                      <p class="text-center fw-semibold fs-4"><strong>Maldivas</strong></p>
+                      <p class="card-text">R$ 9.590,00
+                        em até 10x</p>
+                      <button id="botao-card-promo"><a id="a-botao"  href="#">Comprar</a></button>
                     </div>
                   </div>
                 </div>
-               
+              
                   <div class="col">
                     <div class="card">
-                      <img src="imagens/Lisboa.jpg" class="card-img-top" alt="...">
+                      <img src="imagens/pexels-pixabay-161853.jpg" class="card-img-top" alt="...">
                       <div class="card-body">
                         <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
-                        <p class="text-center fw-semibold fs-4"><strong>Lisboa</strong></p>
-                        <p class="card-text"></p>
-                        <button id="botao-card-promo"><a href="#">Conferir</a></button>
+                        <p class="text-center fw-semibold fs-4"><strong>Paris</strong></p>
+                        <p class="card-text">R$ 5.590,00 em até 10x</p>
+                        <button id="botao-card-promo"><a href="#">Comprar</a></button>
                       </div>
                     </div>
                   </div>
-        </div>
-      </div>
-          <div class="row row-cols-1 row-cols-md-2 g-4">
-            <div class="col">
-              <div class="card">
-                <img src="imagens/Lisboa.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
-                  <p class="text-center fw-semibold fs-4"><strong>Lisboa</strong></p>
-                  <p class="card-text"></p>
-                  <button id="botao-card-promo"><a href="#">Conferir</a></button>
-                </div>
-              </div>
-            </div>
-          
-              <div class="col">
-                <div class="card">
-                  <img src="imagens/Lisboa.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
-                    <p class="text-center fw-semibold fs-4"><strong>Lisboa</strong></p>
-                    <p class="card-text"></p>
-                    <button id="botao-card-promo"><a href="#">Conferir</a></button>
-                  </div>
-                </div>
-              </div>
-          
-                <div class="col">
-                  <div class="card">
-                    <img src="imagens/Lisboa.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
-                      <p class="text-center fw-semibold fs-4"><strong>Lisboa</strong></p>
-                      <p class="card-text"></p>
-                      <button id="botao-card-promo"><a href="#">Conferir</a></button>
-                    </div>
-                  </div>
-                </div>
-               
-                  <div class="col">
-                    <div class="card">
-                      <img src="imagens/Lisboa.jpg" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
-                        <p class="text-center fw-semibold fs-4"><strong>Lisboa</strong></p>
-                        <p class="card-text"></p>
-                        <button id="botao-card-promo"><a href="#">Conferir</a></button>
+              
+                    <div class="col">
+                      <div class="card">
+                        <img src="imagens/pexels-wolfgang-2748018.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
+                          <p class="text-center fw-semibold fs-4"><strong>Veneza</strong></p>
+                          <p class="card-text">R$ 6.590,00  em até 10x</p>
+                          <button id="botao-card-promo"><a href="#">Comprar</a></button>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                   
+                      <div class="col">
+                        <div class="card">
+                          <img src="imagens/pexels-craig-adderley-3411135.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
+                            <p class="text-center fw-semibold fs-4"><strong>Disney</strong></p>
+                            <p class="card-text">R$ 15.590,00 em até 10x</p>
+                            <button id="botao-card-promo"><a href="#">Comprar</a></button>
+                          </div>
+                        </div>
+                      </div>
+                      
+            </div>
+          </div>
+          
+          <div class="container-md-destinos-internacionais">
+                  <div class="row row-cols-1 row-cols-md-2 g-8">
+                    <div class="col">
+                      <div class="card">
+                        <img src="imagens/pexels-maria-isabella-bernotti-1049298.jpg" class="card-img-top" alt="">
+                        <div class="card-body">
+                         
+                          <p class="text-center fw-semibold fs-4"><strong>Maldivas</strong></p>
+                          <p class="card-text">R$ 9.590,00
+                            em até 10x</p>
+                          <button id="botao-card-promo"><a id="a-botao"  href="#">Comprar</a></button>
+                        </div>
+                      </div>
+                    </div>
+                  
+                      <div class="col">
+                        <div class="card">
+                          <img src="imagens/pexels-pixabay-161853.jpg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
+                            <p class="text-center fw-semibold fs-4"><strong>Paris</strong></p>
+                            <p class="card-text">R$ 5.590,00 em até 10x</p>
+                            <button id="botao-card-promo"><a href="#">Comprar</a></button>
+                          </div>
+                        </div>
+                      </div>
+                  
+                        <div class="col">
+                          <div class="card">
+                            <img src="imagens/pexels-wolfgang-2748018.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
+                              <p class="text-center fw-semibold fs-4"><strong>Veneza</strong></p>
+                              <p class="card-text">R$ 6.590,00  em até 10x</p>
+                              <button id="botao-card-promo"><a href="#">Comprar</a></button>
+                            </div>
+                          </div>
+                        </div>
+                       
+                          <div class="col">
+                            <div class="card">
+                              <img src="imagens/pexels-craig-adderley-3411135.jpg" class="card-img-top" alt="...">
+                              <div class="card-body">
+                                <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
+                                <p class="text-center fw-semibold fs-4"><strong>Disney</strong></p>
+                                <p class="card-text">R$ 15.590,00 em até 10x</p>
+                                <button id="botao-card-promo"><a href="#">Comprar</a></button>
+                              </div>
+                            </div>
+                          </div>
+                  </div>    
+                </div>
         </div>
-      </div>
+              
+        
       <footer>
         <div class="footer-container bg-light">
           <div class="row-footer">

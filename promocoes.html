@@ -15,42 +15,63 @@
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" 
     integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+   <link rel="stylesheet" href="Script.js">
 </head>
 <body>
     <!--Nav bar -->
   
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul  class="nav-ul">
-              <li class="nav-li">
-                <a class="nav-a" href="index.html">Home</a>
-              </li>
-              <li class="nav-li">
-                <a class="nav-a" href="destinos.html">Destinos</a>
-              </li>
-              <li class="nav-li">
-                <a class="nav-a" href="promocoes.html">Promoções</a>
-              </li>
-              <li class="nav-li">
-                <a class="nav-a" href="contato.html">Fale Conosco</a>
-              </li>
-              <li class="nav-li">
-                <div class="input-group">
-                  <input id = "input-header"class="form-control" type="search" placeholder="Buscar destino.." aria-label="Search" style="border-right: none;">
-                  <div class="input-group-append">
-                    <div class="input-group-text" style="background-color: #FFF"><i class="fas fa-search"></i></div>
-                  </div>
+      <img src="imagens/aviao.png">
+      <h5>Potter Travel</h5>
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
+          <ul  class="nav-ul">
+            <li class="nav-li">
+              <a class="nav-a" href="index.html">Home</a>
+            </li>
+            <li class="nav-li">
+              <a class="nav-a" href="destinos.html">Destinos</a>
+            </li>
+            <li class="nav-li">
+              <a class="nav-a" href="promocoes.html">Promoções</a>
+            </li>
+            <li class="nav-li">
+              <a class="nav-a" href="contato.html">Fale Conosco</a>
+            </li>
+            <li class="nav-li">
+              <div class="input-group">
+                <input id = "input-header"class="form-control" type="search" placeholder="Buscar destino.." aria-label="Search" style="border-right: none;">
+                <div class="input-group-append">
+                  <div class="input-group-text" style="background-color: #FFF"><i class="fas fa-search"></i></div>
                 </div>
-                </div>
-              </li>
-          </div>
+              </div>
+              </div>
+            </li>
         </div>
-      </nav>
+      </div>
+    </nav>
+
+<!--js-->
+<div id="slide">
+  <div id="banner">
+      <div id="wrapper">
+          <img class="slide" src="imagens/Promoção.jpg" alt="Slide 1">
+          <img class="slide" src="imagens/Até 70% (1).png" alt="Slide 2">
+      </div>
+  </div>
+</div>
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="script.js"></script>
+
+      <div class="container-md">
+        <div class="h3-promo">
+          <h3 id="h3-promocoes">Promoções</h3>
+        </div>
+      
+      </div>
       <div class="ofertas-home">
         <div id="ofertas-home">
-          <div class="h5-promocoes">
-            <h5><strong>Promoções</strong></h5>
           </div>
           <div class="row row-cols-1 row-cols-md-2 g-4">
             <div class="col">
@@ -102,7 +123,31 @@
                   </div>
         </div>
       </div>
-          <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+          <div class="card">
+            <img src="imagens/Lisboa.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
+              <p class="text-center fw-semibold fs-4"><strong>Lisboa</strong></p>
+              <p class="card-text"></p>
+              <button id="botao-card-promo"><a href="#">Conferir</a></button>
+            </div>
+          </div>
+        </div>
+      
+          <div class="col">
+            <div class="card">
+              <img src="imagens/Lisboa.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
+                <p class="text-center fw-semibold fs-4"><strong>Lisboa</strong></p>
+                <p class="card-text"></p>
+                <button id="botao-card-promo"><a href="#">Conferir</a></button>
+              </div>
+            </div>
+          </div>
+      
             <div class="col">
               <div class="card">
                 <img src="imagens/Lisboa.jpg" class="card-img-top" alt="...">
@@ -114,7 +159,7 @@
                 </div>
               </div>
             </div>
-          
+           
               <div class="col">
                 <div class="card">
                   <img src="imagens/Lisboa.jpg" class="card-img-top" alt="...">
@@ -126,32 +171,8 @@
                   </div>
                 </div>
               </div>
-          
-                <div class="col">
-                  <div class="card">
-                    <img src="imagens/Lisboa.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
-                      <p class="text-center fw-semibold fs-4"><strong>Lisboa</strong></p>
-                      <p class="card-text"></p>
-                      <button id="botao-card-promo"><a href="#">Conferir</a></button>
-                    </div>
-                  </div>
-                </div>
-               
-                  <div class="col">
-                    <div class="card">
-                      <img src="imagens/Lisboa.jpg" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
-                        <p class="text-center fw-semibold fs-4"><strong>Lisboa</strong></p>
-                        <p class="card-text"></p>
-                        <button id="botao-card-promo"><a href="#">Conferir</a></button>
-                      </div>
-                    </div>
-                  </div>
-        </div>
-      </div>
+    </div>
+  </div>
       <footer>
         <div class="footer-container bg-light">
           <div class="row-footer">
