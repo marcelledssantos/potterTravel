@@ -95,16 +95,26 @@ nav a:hover{
     margin-top: 60px;
    align-content: center;
     padding:auto;
+    padding-bottom: 10%;
     margin-bottom: 50px;
 }
+.container-md-destinos-internacionais {
+    margin-top: 10%;
+    text-align: center;
+    color:var(--color-3);
+}
 
-.h5-promocoes {
-    color: var(--color-4);
+#h3-promocoes {
+    color: var(--color-1);
     text-decoration: solid color var(--color-3);
     display: flex;
     text-transform: uppercase;
-    margin-left: 5%;
+   justify-content: center;
+   text-align: center;
+    margin-top: 8%;
     margin-bottom: 2%;
+    font-size: xx-large;
+    background-color: var(--color-3);
 }
 
 strong {
@@ -132,7 +142,7 @@ strong {
     justify-content: center;
    border-radius: 5%;
    border-color: var(--color-3);
-  
+  margin-top: -8px;
    background: var(--color-1);
 }
 #botao-card-promo a {
@@ -140,7 +150,15 @@ strong {
     text-transform: uppercase;
 
 }
-.card-text-p {
+.card-text {
+    margin-top: -10px;
+    margin-bottom: 5px;
+  
+   
+}
+
+.card-text-promo {
+    color:red;
     text-transform: uppercase;
    
 }
