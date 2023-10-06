@@ -1,0 +1,43 @@
+package console;
+
+import java.util.Scanner;
+
+import cliente.Cliente;
+import cliente.ClienteDAO;
+
+public class Console {
+	
+	
+	
+	public static void main(String[] args) {
+		ClienteDAO clienteDAO = new ClienteDAO();
+		Cliente cliente = new Cliente();
+		Scanner entrada = new Scanner(System.in);
+		int menu = 1;
+		
+		while (menu!=0) {
+		System.out.println("Bem vindo(a) a agência de viagens Potter Travel");
+		System.out.println("Digite a opção desejada: ");
+		System.out.println("1. Cadastro de usuário");
+		System.out.println("0. Sair");
+		menu = entrada.nextInt();
+		
+		}
+		
+		switch(menu) {
+		
+		case 1:
+			System.out.println("Digite seu nome: ");
+			String nome = entrada.next();
+			cliente.setNome(nome);
+			clienteDAO.salvarCliente(cliente);
+			break;
+		}
+		
+		
+	
+		}
+		
+	}
+	
+

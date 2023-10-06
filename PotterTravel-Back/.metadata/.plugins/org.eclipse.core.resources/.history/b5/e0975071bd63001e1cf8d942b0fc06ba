@@ -1,0 +1,62 @@
+package cliente;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import factory.ConnectionFactory;
+
+
+	public class ClienteDAO {
+		
+		public void save(Cliente cliente) {
+			String sql = "INSERT INTO cliente(nome,cpf,telefone,endereco,email,senha,ofertas)" + "VALUES(?,?,?,?,?,?,?)";
+			
+			Connection conn = null;
+			PreparedStatement pstm= null;
+			try {
+
+				conn = ConnectionFactory.createConnectionToMySQL();
+
+				pstm = conn.prepareStatement(sql);
+
+				pstm.setString(1, cliente.getNome());
+
+				pstm.setString(2, cliente.getCpf());
+				
+				pstm.setString(3, cliente.getTelefone());
+
+				pstm.setString(4, cliente.getEndereco());
+
+				pstm.setString(5, cliente.getEmail());
+				
+				pstm.setString(6, cliente.getSenha());
+				
+				pstm.setBoolean(7, cliente.getOfertas());
+
+				pstm.execute();
+
+			} catch (Exception e) {
+
+				e.printStackTrace();
+			} finally {
+
+				try {
+					if (pstm != null) {
+
+						pstm.close();
+					}
+
+					if (conn != null) {
+
+						conn.close();
+
+					}
+				} catch (Exception e) {
+
+					e.printStackTrace();
+				}
+			}
+		}
+
+		}
+

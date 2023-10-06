@@ -1,0 +1,70 @@
+package console;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.Scanner;
+import cliente.Cliente;
+import cliente.ClienteDAO;
+import factory.ConnectionFactory;
+
+public class Console {
+
+	public static void main(String[] args) {
+		ClienteDAO clienteDAO = new ClienteDAO();
+		Cliente cliente = new Cliente();
+		Scanner entrada = new Scanner(System.in);
+		int menu = 1;
+
+		while (menu != 0) {
+			System.out.println("Bem vindo(a) a agência de viagens Potter Travel");
+			System.out.println("Digite a opção desejada: ");
+			System.out.println("1. Cadastro de usuário");
+			System.out.println("2. Exibir todos usuários");
+			System.out.println("3. Atualizar usuário");
+			System.out.println("4. Deletar usuário");
+			System.out.println("0. Sair");
+			menu = entrada.nextInt();
+			entrada.nextLine();
+			switch (menu) {
+
+			case 1:
+				System.out.println("Digite seu nome: ");
+				String nome = entrada.nextLine();
+				cliente.setNome(nome);
+				System.out.println("Agora digite seu CPF: ");
+				String cpf = entrada.nextLine();
+				cliente.setCpf(cpf);
+				System.out.println("Digite seu telefone: ");
+				String telefone = entrada.nextLine();
+				cliente.setTelefone(telefone);
+				System.out.println("Digite endereço: ");
+				String endereco = entrada.nextLine();
+				cliente.setEndereco(endereco);
+				System.out.println("Agora seu email: ");
+				String email = entrada.nextLine();
+				cliente.setEmail(email);
+				System.out.println("Digite sua senha: ");
+				String senha = entrada.nextLine();
+				cliente.setSenha(senha);
+				clienteDAO.salvarCliente(cliente);
+				System.out.println("Usuário cadastrado com sucesso!");
+				break;
+
+			case 2:
+				for(Cliente c : clienteDAO.exibirUsuarios()) {
+					System.out.println("NOME: " + c.getNome());
+				}
+				break;
+				
+			case 3: 
+				System.out.println("Atualizar usuário");
+				break;
+				
+			case 4:
+				System.out.println("Deletar usuário");
+				break;
+			}
+		}
+
+	}
+}

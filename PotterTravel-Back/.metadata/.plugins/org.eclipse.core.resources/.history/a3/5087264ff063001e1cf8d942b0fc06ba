@@ -1,0 +1,12 @@
+package viagem;
+
+import java.sql.Date;
+
+public class Viagem {
+
+	private int id; 
+	private Date horario;
+	private Date data;
+	private String origem;
+	private String destino;
+}
