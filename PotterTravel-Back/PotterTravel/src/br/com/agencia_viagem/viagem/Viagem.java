@@ -1,12 +1,12 @@
 package viagem;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 public class Viagem {
 
 	private int id;
-	private Date horario;
-	private Date data;
+	private String horario;
+	private LocalDate data_viagem;
 	private String origem;
 	private String destino;
 
@@ -21,20 +21,20 @@ public class Viagem {
 		this.id = id;
 	}
 
-	public Date getHorario() {
+	public String getHorario() {
 		return horario;
 	}
 
-	public void setHorario(Date horario) {
+	public void setHorario(String horario) {
 		this.horario = horario;
 	}
 
-	public Date getData() {
-		return data;
+	public LocalDate getData_Viagem() {
+		return data_viagem;
 	}
 
-	public void setData(Date data) {
-		this.data = data;
+	public void setData_Viagem(LocalDate data_viagem) {
+		this.data_viagem = data_viagem;
 	}
 
 	public String getOrigem() {
