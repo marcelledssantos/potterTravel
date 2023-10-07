@@ -1,14 +1,18 @@
 package console;
 
 import java.util.Scanner;
+import cia_aerea.Cia_aerea;
+import cia_aerea.Cia_aereaDAO;
 import cliente.Cliente;
 import cliente.ClienteDAO;
+import passagem_aerea.Passagem_aerea;
+import passagem_aerea.Passagem_aereaDAO;
 import viagem.Viagem;
 import viagem.ViagemDAO;
-
 import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+
 public class Console {
 
 	public static void main(String[] args) throws ParseException {
@@ -16,18 +20,21 @@ public class Console {
 		Viagem viagem = new Viagem();
 		ClienteDAO clienteDAO = new ClienteDAO();
 		Cliente cliente = new Cliente();
+		Cia_aereaDAO cia_aereaDAO = new Cia_aereaDAO();
+		Cia_aerea cia_aerea = new Cia_aerea();
+		Passagem_aereaDAO passagem_aereaDAO = new Passagem_aereaDAO();
+		Passagem_aerea passagem_aerea = new Passagem_aerea();
 		Scanner entrada = new Scanner(System.in);
-		
-		
-		int menu = 1;
-		
 
-		while (menu != 0) { //Menu principal
+		int menu = 1;
+
+		while (menu != 0) { // Menu principal
 			System.out.println("Bem vindo(a) a agência de viagens Potter Travel");
 			System.out.println("Digite a opção desejada: ");
 			System.out.println("1. Menu Usuário");
 			System.out.println("2. Menu Viagem");
 			System.out.println("3. Menu Cia Aérea");
+			System.out.println("4. Menu Passagem Aérea");
 			System.out.println("0. Sair");
 			menu = entrada.nextInt();
 			entrada.nextLine();
@@ -43,7 +50,7 @@ public class Console {
 
 				switch (menu) {
 
-				case 1: //Create Cliente
+				case 1: // Create Cliente
 					System.out.println("Digite seu nome: ");
 					entrada.nextLine();
 					String nome = entrada.nextLine();
@@ -68,7 +75,7 @@ public class Console {
 					System.out.println();
 					break;
 
-				case 2: //Read cliente
+				case 2: // Read cliente
 					for (Cliente c : clienteDAO.exibirUsuarios()) {
 						System.out.println("NOME: " + c.getNome());
 					}
@@ -77,7 +84,7 @@ public class Console {
 					entrada.nextLine();
 					break;
 
-				case 3: //Upadate cliente
+				case 3: // Upadate cliente
 					Cliente clienteupdate = new Cliente();
 					System.out.println("Digite qual ID deseja editar: ");
 					int idUpdate = entrada.nextInt();
@@ -86,7 +93,7 @@ public class Console {
 					entrada.nextLine();
 					String nomeUpdate = entrada.nextLine();
 					clienteupdate.setNome(nomeUpdate);
-					//bug
+					// bug
 					System.out.println("Digite o novo CPF: ");
 					String cpfUpdate = entrada.nextLine();
 					clienteupdate.setCpf(cpfUpdate);
@@ -136,7 +143,7 @@ public class Console {
 					viagem.setDestino(destino);
 					System.out.println("Digite a data de partida: (aaaa-mm-dd)");
 					String data_Viagem = entrada.nextLine();
-					LocalDate dataConvertida = LocalDate.parse(data_Viagem,DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+					LocalDate dataConvertida = LocalDate.parse(data_Viagem, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 					viagem.setData_Viagem(dataConvertida);
 					System.out.println("Digite o Horário:");
 					String horario = entrada.nextLine();
@@ -152,14 +159,13 @@ public class Console {
 						System.out.println("DESTINO: " + c.getDestino());
 						System.out.println("DATA: " + c.getData_Viagem());
 						System.out.println("HORARIO: " + c.getHorario());
-						System.out.println();	
+						System.out.println();
 					}
 					System.out.println("Digite enter para finalizar");
 					entrada.nextLine();
 					entrada.nextLine();
 					break;
-					
-					
+
 				case 3:// Update viagem BUG
 					Viagem viagemUpdate = new Viagem();
 					System.out.println("Digite qual ID deseja editar: ");
@@ -174,7 +180,8 @@ public class Console {
 					viagemUpdate.setDestino(destinoUpdate);
 					System.out.println("Digite a nova data: (aaaa-mm-dd)");
 					String novaData_Viagem = entrada.nextLine();
-					LocalDate novaDataConvertida = LocalDate.parse(novaData_Viagem,DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+					LocalDate novaDataConvertida = LocalDate.parse(novaData_Viagem,
+							DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 					viagem.setData_Viagem(novaDataConvertida);
 					System.out.println("Digite o novo horário: ");
 					String horarioUpdate = entrada.nextLine();
@@ -196,9 +203,84 @@ public class Console {
 					entrada.nextLine();
 					break;
 				}
+			case 3:
+
+				// Menu Cia_aerea
+				System.out.println("Digite qual opção deseja:");
+				System.out.println("1. Cadastrar cia aérea:");
+				System.out.println("2. Exibir todas cias aéreas:");
+				System.out.println("3. Atualizar cia aérea:");
+				System.out.println("4. Deletar cia aérea:");
+				menu = entrada.nextInt();
+
+				switch (menu) {
+
+				case 1: // Create cia aérea {
+					System.out.println("Digite o nome da cia aérea: ");
+					entrada.nextLine();
+					String nome = entrada.nextLine();
+					cia_aerea.setNome(nome);
+					cia_aereaDAO.salvarCia_Aerea(cia_aerea);
+					System.out.println("Cia aérea cadastrada com sucesso!");
+					System.out.println();
+					break;
+
+				case 2: // Read viagem
+					for (Cia_aerea c : cia_aereaDAO.exibirCia_aerea()) {
+						System.out.println("CIA AÉREA: " + c.getNome());
+					}
+					System.out.println("Digite enter para finalizar");
+					entrada.nextLine();
+					entrada.nextLine();
+					break;
 			
+				case 3: // Update
+					Cia_aerea cia_aereaUpdate = new Cia_aerea();
+					System.out.println("Digite qual ID deseja editar: ");
+					int idUpdate = entrada.nextInt();
+					cia_aereaUpdate.setId(idUpdate);
+					System.out.println("Digite a nova cia aérea: ");
+					entrada.nextLine();
+					String nomeUpdate = entrada.nextLine();
+					cia_aereaUpdate.setNome(nomeUpdate);
+					System.out.println("Cia aérea alterada com sucesso");
+					System.out.println();
+					break;
+					
+				case 4: // Delete
+					System.out.println("Digite qual ID deseja deletar: ");
+					int idDelete = entrada.nextInt();
+					cia_aereaDAO.removeByIdCia_Aerea(idDelete);
+					System.out.println("Cia aérea deletada com sucesso!");
 				}
+			case 4:
+
+				// Menu Cia_aerea
+				System.out.println("Digite qual opção deseja:");
+				System.out.println("1. Cadastrar Passagem aérea:");
+				System.out.println("2. Exibir todas as passagens aéreas:");
+				System.out.println("3. Atualizar passagem aérea:");
+				System.out.println("4. Deletar passagem aérea:");
+				menu = entrada.nextInt();
+
+				switch (menu) {
+
+				case 1: // Create Passagem aérea {
+					System.out.println("Digite o Id da viagem: ");
+					entrada.nextLine();
+					int id_viagem = entrada.nextInt();
+					passagem_aerea.setId_viagem(id_viagem);
+					System.out.println("Digite o Id da cia aérea: ");
+					entrada.nextLine();
+					int id_cia_aerea = entrada.nextInt();
+					passagem_aerea.setId_cia_aerea(id_cia_aerea);
+					passagem_aereaDAO.salvarPassagem_Aerea(passagem_aerea);
+					System.out.println("Passagem aérea cadastrada com sucesso!");
+					System.out.println();
+					break;
 			}
 		}
-
 	}
+
+}
+}
