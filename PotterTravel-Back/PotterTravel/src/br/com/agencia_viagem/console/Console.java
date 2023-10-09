@@ -234,7 +234,7 @@ public class Console {
 					entrada.nextLine();
 					break;
 			
-				case 3: // Update
+				case 3: // Update viagem
 					Cia_aerea cia_aereaUpdate = new Cia_aerea();
 					System.out.println("Digite qual ID deseja editar: ");
 					int idUpdate = entrada.nextInt();
@@ -247,7 +247,7 @@ public class Console {
 					System.out.println();
 					break;
 					
-				case 4: // Delete
+				case 4: // Delete viagem
 					System.out.println("Digite qual ID deseja deletar: ");
 					int idDelete = entrada.nextInt();
 					cia_aereaDAO.removeByIdCia_Aerea(idDelete);
