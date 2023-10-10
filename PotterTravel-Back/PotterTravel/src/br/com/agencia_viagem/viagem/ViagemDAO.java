@@ -23,9 +23,9 @@ public class ViagemDAO {
 			pstm = conn.prepareStatement(sql);
 
 			pstm.setString(1, viagem.getHorario());
-			
+
 			Date sqlDate = Date.valueOf(viagem.getData_Viagem());
-			
+
 			pstm.setDate(2, sqlDate);
 
 			pstm.setString(3, viagem.getOrigem());
@@ -56,6 +56,7 @@ public class ViagemDAO {
 			}
 		}
 	}
+
 	public List<Viagem> exibirDestinos() {
 		String sql = "SELECT * FROM viagem";
 		List<Viagem> viagens = new ArrayList<Viagem>();
@@ -99,10 +100,9 @@ public class ViagemDAO {
 		}
 		return viagens;
 	}
-	
+
 	public void update(Viagem novaViagem) {
-		String sql = "UPDATE viagem SET origem = ?, destino = ?, data_viagem = ?, horario = ?"
-				+ "WHERE id = ?";
+		String sql = "UPDATE viagem SET origem = ?, destino = ?, data_viagem = ?, horario = ?" + "WHERE id = ?";
 
 		Connection conn = null;
 		PreparedStatement pstm = null;
@@ -161,4 +161,3 @@ public class ViagemDAO {
 		}
 	}
 }
-
