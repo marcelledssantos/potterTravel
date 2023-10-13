@@ -28,9 +28,7 @@ header {
 .nav-li {
  display: flex;  
   float: left;
-  list-style: none;
-    
-   
+  list-style: none;  
 }
 .nav-a {
     text-transform: uppercase; 
@@ -39,19 +37,15 @@ header {
     text-decoration: none;
     color: var(--color-3)   
 }
-
 nav a:hover{
     color: var(--color-4);
-    font-weight: bold;
-   
+    font-weight: bold; 
 }
-
 .nav-header {
     float: left;
     width: 100%;
     background-color: var(--color-1);
 }
-
 .navbar h5{
     display: flex;
     color: black;
@@ -61,28 +55,21 @@ nav a:hover{
     display: flex;
     width: 40px;
 }
-
-#input-header {
-    display: flex;
-    width: 550px;
-    margin-top: 2%;
-   
+@media (max-width: 768px) {
+    .nav,
+    .nav-header,
+    .navbar
+     {
+        width: 100%;
+    }
 }
-
-.input-group-append {
-    display: flex;
-    margin-top: 2%;
-   
-}
-
 --fim--
 
 --Carousel--
 #img-carousel {
     width: 300px;
     height: 300px;
-    position: absolute;
-   
+    position: absolute;  
 }
 .carousel {
     width: 100%;
@@ -98,7 +85,6 @@ nav a:hover{
     z-index: 10;
     position: absolute;
 }
-
 #h5-carrousel {
     color:var(--color-2);
     text-align: center;
@@ -113,7 +99,7 @@ nav a:hover{
 }
 #ofertas-home {
     margin-top: 60px;
-   align-content: center;
+    align-content: center;
     padding: auto;
     margin-bottom: 50px;
 }
@@ -123,23 +109,18 @@ nav a:hover{
     text-decoration: solid color var(--color-3);
     display: flex;
     text-transform: uppercase;
-    margin-left: 5%;
+    margin-left: 38%;
     margin-top: 10%;
-    margin-bottom: 2%;
-   
+    margin-bottom: 2%; 
 }
-
 strong {
     color:var(--color-3);
-    text-align: center;
-  
-  
+    text-align: center; 
 }
 
 .card-titulo {
     color: var(--color-3);
-    text-transform: uppercase;
-   
+    text-transform: uppercase;   
 }
 #img-card {
     float: right;
@@ -152,59 +133,54 @@ strong {
     align-items: center;
     text-align: center;
     justify-content: center;
-   border-radius: 10%;
-   border-color: var(--color-3);
-   background: var(--color-1);
+    border-radius: 10%;
+    border-color: var(--color-3);
+    background: var(--color-1);
 }
-
-
+@media (max-width: 768px) {
+    #botao-card-promo {
+        width: 40%;
+    }
+}
 #botao-card-promo a {
     display: flex;
     color: var(--color-3);
-    
-
 }
 .card-text-p {
-    text-transform: uppercase;
-   
+    text-transform: uppercase;  
 }
- --destinos home --
+
+--destinos home --
 
  .h3-destinos {
     color: var(--color-4);
     text-decoration: solid color var(--color-3);
     display: flex;
-   text-transform: uppercase;
+    text-transform: uppercase;
 }
-
-.destinos-home {
-    
+.destinos-home {  
     margin: 30px ;
 }
 #destinos-home {
     margin-top: 60px;
     align-content: center;
-     padding: auto;
-   
- }
+     padding: auto;  
+}
  .container-md-dicas {
     width: 100%;
     background-color: var(--color-3);
     align-content: center;
     margin-bottom: 5%;
 }
-
 .h3-cards {
     margin: 0 0 0 0;
 }
-
 .secao4 {
     height: auto;
     width: 100%;
     align-content: center;
     margin-top: 2px;
 }
-
 .secao4-div {
     display: flex;
     flex-wrap: wrap;
@@ -213,11 +189,8 @@ strong {
     align-items: stretch;
     padding: 10px;
     text-align: center;
-    justify-content: center;
-    
+    justify-content: center;   
 }
-
-
 .secao4-div img {
     width: 100%;
     height: 80%;
@@ -240,7 +213,6 @@ strong {
     justify-content: center;
     height: auto;
 }
-
 .secao4-div-1:hover,
 .secao4-div-2:hover,
 .secao4-div-3:hover {
@@ -250,26 +222,22 @@ strong {
 
 #h5-dicas {
     color: var(--color-1);
-   text-decoration: solid color var(--color-3);
-   display: flex;
-   text-transform: uppercase;
-   margin-left: 5%;
-   margin-bottom: 2%;
-   margin-top: 10%;
-
+    text-decoration: solid color var(--color-3);
+    display: flex;
+    text-transform: uppercase;
+    margin-left: 28%;
+    margin-bottom: 2%;
+    margin-top: 10%;
 }
 
 /*mobile*/
 @media (max-width: 768px) {
-
     .secao4-div-1,
     .secao4-div-2,
     .secao4-div-3 {
         width: 100%;
     }
 }
-
-
 /*footer*/
  footer {
     width: 100%;
@@ -277,19 +245,15 @@ strong {
     align-items: center;
     text-align: center;
  }
-.container-footer {
-  
+.container-footer { 
     max-width: 1400px;
     padding: 0 4%;
     margin:auto;
     align-items: center;
-   
-
 }
 .row-footer {
     display: flex;
     flex-wrap:wrap;
-
 }
 .footer-col {
     width: 25%;
@@ -305,24 +269,19 @@ strong {
 }
 .footer-col ul {
     list-style: none;
-
 }
 .footer-col ul li {
-    margin:-1px ;
-    
+    margin:-1px ;   
 }
 .footer-col ul li a {
     font-size:15px ;
     color: var(--color-3);
     text-decoration: none;
     display: block;
-    transition: all 0.3s ease;
-  
-   
+    transition: all 0.3s ease;  
 }
 .footer-col ul li a:hover {
-    color: var(--color-3);
-  
+    color: var(--color-3); 
 }
 .footer-col  p {
     font-size:15px ;
@@ -335,9 +294,12 @@ strong {
 }
 .footer-col ul li p {
     margin:-1px ;
-    
 }
 
-
-
+@media (max-width: 768px) {
+    .footer 
+    .container-footer {
+        width: 100%;
+    }
+}
 /*fim*/
