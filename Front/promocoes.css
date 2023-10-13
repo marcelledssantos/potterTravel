@@ -76,8 +76,7 @@ nav a:hover{
     margin-top: 5%;
     text-align: center;
     color:var(--color-3);
- 
-   
+  
 }
 
 .container-md h3 {
@@ -109,8 +108,8 @@ nav a:hover{
     text-decoration: solid color var(--color-3);
     display: flex;
     text-transform: uppercase;
-   justify-content: center;
-   text-align: center;
+    justify-content: center;
+    text-align: center;
     margin-top: 8%;
     margin-bottom: 2%;
     font-size: xx-large;

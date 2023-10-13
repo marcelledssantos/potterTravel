@@ -1,253 +1,235 @@
 <!DOCTYPE html>
 <html lang="Pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Destinos</title>
-    <link rel="stylesheet" href="destinos.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Lora&family=Roboto&display=swap" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" 
-    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
- 
-</head>
-<body>
-     <!--Menu principal-->
 
-    <!--Nav bar -->
-  
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <img src="imagens/aviao.png">
-      <h5>Potter Travel</h5>
-      <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      
-          <ul  class="nav-ul">
-            <li class="nav-li">
-              <a class="nav-a" href="index.html">Home</a>
-            </li>
-            <li class="nav-li">
-              <a class="nav-a" href="destinos.html">Destinos</a>
-            </li>
-            <li class="nav-li">
-              <a class="nav-a" href="promocoes.html">Promoções</a>
-            </li>
-            <li class="nav-li">
-              <a class="nav-a" href="contato.html">Fale Conosco</a>
-            </li>
-            <li class="nav-li">
-              <div class="input-group">
-                <input id = "input-header"class="form-control" type="search" placeholder="Buscar destino.." aria-label="Search" style="border-right: none;">
-                <div class="input-group-append">
-                  <div class="input-group-text" style="background-color: #FFF"><i class="fas fa-search"></i></div>
-                </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destinos</title>
+  <link rel="stylesheet" href="destinos.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Lora&family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+  <!--Nav bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <img src="imagens/aviao.png">
+    <h5>Potter Travel</h5>
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="nav-ul">
+          <li class="nav-li">
+            <a class="nav-a" href="index.html">Home</a>
+          </li>
+          <li class="nav-li">
+            <a class="nav-a" href="destinos.html">Destinos</a>
+          </li>
+          <li class="nav-li">
+            <a class="nav-a" href="promocoes.html">Promoções</a>
+          </li>
+          <li class="nav-li">
+            <a class="nav-a" href="contato.html">Fale Conosco</a>
+          </li>
+      </div>
+      </li>
+    </div>
+    </div>
+  </nav>
+
+  <!--Container pesquisa-->
+  <div class="container-fluid-pesquisa">
+    <div id="fixa">
+      <label class="label-principal">Origem</label>
+      <input class="input-pesquisa" type="text" placeholder="ex. Rio de Janeiro-RJ">
+
+      <label class="label-principal">Destino</label>
+      <input class="input-pesquisa" type="text" placeholder="ex. São Paulo-SP">
+
+      <label class="label-principal">Partida</label>
+      <input class="input-numerico" type="text" placeholder="dd/mm/aaaa">
+
+      <label class="label-principal">Chegada</label>
+      <input class="input-numerico" type="text" placeholder="dd/mm/aaaa">
+
+      <label class="label-principal">Quartos</label>
+      <input class="input-numerico" type="text" placeholder="Nº de quartos">
+
+      <input class="botao-pesquisa" type="submit" value="Buscar">
+    </div>
+  </div>
+  <!--fim-->
+
+  <!--Destinos-->
+  <div class="container-md-destinos-internacionais">
+    <div class="container-md">
+      <div class="destinos-home-2">
+        <div id="destinos-home">
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 g-8">
+          <div class="col">
+            <div class="card">
+              <img src="imagens/pexels-maria-isabella-bernotti-1049298.jpg" class="card-img-top" alt="">
+              <div class="card-body">
+                <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
+                <p class="text-center fw-semibold fs-4"><strong>Maldivas</strong></p>
+                <p class="card-text">R$ 9.590,00
+                  em até 10x</p>
+                <button id="botao-card-promo"><a id="a-botao" href="#">Comprar</a></button>
               </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="imagens/pexels-pixabay-161853.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
+                <p class="text-center fw-semibold fs-4"><strong>Paris</strong></p>
+                <p class="card-text">R$ 5.590,00 em até 10x</p>
+                <button id="botao-card-promo"><a href="#">Comprar</a></button>
               </div>
-            </li>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="imagens/pexels-wolfgang-2748018.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
+                <p class="text-center fw-semibold fs-4"><strong>Veneza</strong></p>
+                <p class="card-text">R$ 6.590,00 em até 10x</p>
+                <button id="botao-card-promo"><a href="#">Comprar</a></button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="imagens/pexels-craig-adderley-3411135.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
+                <p class="text-center fw-semibold fs-4"><strong>Disney</strong></p>
+                <p class="card-text">R$ 15.590,00 em até 10x</p>
+                <button id="botao-card-promo"><a href="#">Comprar</a></button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </nav>
-
-
-    <div class="container-fluid-pesquisa">
-      <div id="fixa">      
-        <label class="label-principal">Origem</label>
-        <input class="input-pesquisa" type="text"placeholder="ex. Rio de Janeiro-RJ">
-        
-        <label class="label">Destino</label>
-        <input class="input-pesquisa" type="text" placeholder="ex. São Paulo-SP">
-
-        <label class="label">Partida</label>
-        <input class="input-numerico" type="text" placeholder="dd/mm/aaaa">
-        
-        <label class="label">Chegada</label>
-        <input class="input-numerico" type="text" placeholder="dd/mm/aaaa">
-        
-        <label class="label">Quartos</label>
-        <input class="input-numerico" type="text"placeholder="Nº de quartos">
-        
-        <input class="botao-pesquisa" type="submit" value="Buscar">
-        </div>
-    </div>
-       
-            
-      
-        
-    <!--fim-->
-
-
-     
       <div class="container-md-destinos-internacionais">
-        <div class="container-md">
-          <div class="destinos-home-2">
-            <div id="destinos-home">
+        <div class="row row-cols-1 row-cols-md-2 g-8">
+          <div class="col">
+            <div class="card">
+              <img src="imagens/pexels-maria-isabella-bernotti-1049298.jpg" class="card-img-top" alt="">
+              <div class="card-body">
+                <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
+                <p class="text-center fw-semibold fs-4"><strong>Maldivas</strong></p>
+                <p class="card-text">R$ 9.590,00
+                  em até 10x</p>
+                <button id="botao-card-promo"><a id="a-botao" href="#">Comprar</a></button>
               </div>
-              <div class="row row-cols-1 row-cols-md-2 g-8">
-                <div class="col">
-                  <div class="card">
-                    <img src="imagens/pexels-maria-isabella-bernotti-1049298.jpg" class="card-img-top" alt="">
-                    <div class="card-body">
-                     
-                      <p class="text-center fw-semibold fs-4"><strong>Maldivas</strong></p>
-                      <p class="card-text">R$ 9.590,00
-                        em até 10x</p>
-                      <button id="botao-card-promo"><a id="a-botao"  href="#">Comprar</a></button>
-                    </div>
-                  </div>
-                </div>
-              
-                  <div class="col">
-                    <div class="card">
-                      <img src="imagens/pexels-pixabay-161853.jpg" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
-                        <p class="text-center fw-semibold fs-4"><strong>Paris</strong></p>
-                        <p class="card-text">R$ 5.590,00 em até 10x</p>
-                        <button id="botao-card-promo"><a href="#">Comprar</a></button>
-                      </div>
-                    </div>
-                  </div>
-              
-                    <div class="col">
-                      <div class="card">
-                        <img src="imagens/pexels-wolfgang-2748018.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
-                          <p class="text-center fw-semibold fs-4"><strong>Veneza</strong></p>
-                          <p class="card-text">R$ 6.590,00  em até 10x</p>
-                          <button id="botao-card-promo"><a href="#">Comprar</a></button>
-                        </div>
-                      </div>
-                    </div>
-                   
-                      <div class="col">
-                        <div class="card">
-                          <img src="imagens/pexels-craig-adderley-3411135.jpg" class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
-                            <p class="text-center fw-semibold fs-4"><strong>Disney</strong></p>
-                            <p class="card-text">R$ 15.590,00 em até 10x</p>
-                            <button id="botao-card-promo"><a href="#">Comprar</a></button>
-                          </div>
-                        </div>
-                      </div>
-                      
             </div>
           </div>
-          
-          <div class="container-md-destinos-internacionais">
-                  <div class="row row-cols-1 row-cols-md-2 g-8">
-                    <div class="col">
-                      <div class="card">
-                        <img src="imagens/pexels-maria-isabella-bernotti-1049298.jpg" class="card-img-top" alt="">
-                        <div class="card-body">
-                         
-                          <p class="text-center fw-semibold fs-4"><strong>Maldivas</strong></p>
-                          <p class="card-text">R$ 9.590,00
-                            em até 10x</p>
-                          <button id="botao-card-promo"><a id="a-botao"  href="#">Comprar</a></button>
-                        </div>
-                      </div>
-                    </div>
-                  
-                      <div class="col">
-                        <div class="card">
-                          <img src="imagens/pexels-pixabay-161853.jpg" class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
-                            <p class="text-center fw-semibold fs-4"><strong>Paris</strong></p>
-                            <p class="card-text">R$ 5.590,00 em até 10x</p>
-                            <button id="botao-card-promo"><a href="#">Comprar</a></button>
-                          </div>
-                        </div>
-                      </div>
-                  
-                        <div class="col">
-                          <div class="card">
-                            <img src="imagens/pexels-wolfgang-2748018.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
-                              <p class="text-center fw-semibold fs-4"><strong>Veneza</strong></p>
-                              <p class="card-text">R$ 6.590,00  em até 10x</p>
-                              <button id="botao-card-promo"><a href="#">Comprar</a></button>
-                            </div>
-                          </div>
-                        </div>
-                       
-                          <div class="col">
-                            <div class="card">
-                              <img src="imagens/pexels-craig-adderley-3411135.jpg" class="card-img-top" alt="...">
-                              <div class="card-body">
-                                <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
-                                <p class="text-center fw-semibold fs-4"><strong>Disney</strong></p>
-                                <p class="card-text">R$ 15.590,00 em até 10x</p>
-                                <button id="botao-card-promo"><a href="#">Comprar</a></button>
-                              </div>
-                            </div>
-                          </div>
-                  </div>    
-                </div>
-        </div>
-              
-        
-      <footer>
-        <div class="footer-container bg-light">
-          <div class="row-footer">
-            <div class="footer-col">
-              <!--footer col-->
-              <h4>A empresa</h4>
-              <ul>
-                <li><a href="#">Quem somos nós</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Depoimentos</a></li>
-                <li><a href="#">Trabalhe Conosco</a></li>
-              </ul>
+          <div class="col">
+            <div class="card">
+              <img src="imagens/pexels-pixabay-161853.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
+                <p class="text-center fw-semibold fs-4"><strong>Paris</strong></p>
+                <p class="card-text">R$ 5.590,00 em até 10x</p>
+                <button id="botao-card-promo"><a href="#">Comprar</a></button>
+              </div>
             </div>
-            <!--Fim footer col-->
-            <div class="footer-col">
-              <!--footer col-->
-              <h4>Site</h4>
-              <ul>
-                <li><a href="#">Check-in Online</a></li>
-                <li><a href="#">Termos de uso</a></li>
-                <li><a href="#">Política de Privacidade</a></li>
-                <li><a href="#">Segurança</a></li>
-              </ul>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="imagens/pexels-wolfgang-2748018.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
+                <p class="text-center fw-semibold fs-4"><strong>Veneza</strong></p>
+                <p class="card-text">R$ 6.590,00 em até 10x</p>
+                <button id="botao-card-promo"><a href="#">Comprar</a></button>
+              </div>
             </div>
-            <div class="footer-col">
-              <!--footer col-->
-              <h4>Ajuda</h4>
-              <ul>
-                <li><a href="#">Perguntas frequentes</a></li>
-                <li><a href="#">Documentos</a></li>
-                <li><a href="#">Seguro viagem</a></li>
-                <li><a href="#">Avalie sua viagem</a></li>
-              </ul>
-            </div>
-            <div class="footer-col">
-              <!--footer col-->
-              <h4>Contato</h4>
-              <ul>
-                <li><p>Av.Coronel de oliveira, 1015 - Porto Alegre- RS</p></li>
-                <li><p>pottertravel@gmail.com</p></li>
-                <li><p>(51) 9 9995 9548</p></li>
-                <li><p>(51) 27265368</p></li>
-              </ul>
-            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="imagens/pexels-craig-adderley-3411135.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <img id="img-card" src="imagens/flight_FILL0_wght400_GRAD0_opsz24.png">
+                <p class="text-center fw-semibold fs-4"><strong>Disney</strong></p>
+                <p class="card-text">R$ 15.590,00 em até 10x</p>
+                <button id="botao-card-promo"><a href="#">Comprar</a></button>
+              </div>
             </div>
           </div>
         </div>
-      </footer>
-      
+      </div>
+    </div>
+<!--Footer-->
+    <footer>
+      <div class="footer-container bg-light">
+        <div class="row-footer">
+          <div class="footer-col">
+            <h4>A empresa</h4>
+            <ul>
+              <li><a href="#">Quem somos nós</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Depoimentos</a></li>
+              <li><a href="#">Trabalhe Conosco</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Site</h4>
+            <ul>
+              <li><a href="#">Check-in Online</a></li>
+              <li><a href="#">Termos de uso</a></li>
+              <li><a href="#">Política de Privacidade</a></li>
+              <li><a href="#">Segurança</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Ajuda</h4>
+            <ul>
+              <li><a href="#">Perguntas frequentes</a></li>
+              <li><a href="#">Documentos</a></li>
+              <li><a href="#">Seguro viagem</a></li>
+              <li><a href="#">Avalie sua viagem</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contato</h4>
+            <ul>
+              <li>
+                <p>Av.Coronel de oliveira, 1015 - Porto Alegre- RS</p>
+              </li>
+              <li>
+                <p>pottertravel@gmail.com</p>
+              </li>
+              <li>
+                <p>(51) 9 9995 9548</p>
+              </li>
+              <li>
+                <p>(51) 27265368</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </div>
+  </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
 
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,47 +1,52 @@
-*{
+* {
     box-sizing: border-box;
     font-family: 'Arvo', serif;
     font-family: 'Lora', serif;
     font-family: 'Roboto', sans-serif;
-   
+
 }
-:root{
-    --color-1:#fefefe;
-    --color-2:#eadec5;
+
+:root {
+    --color-1: #fefefe;
+    --color-2: #eadec5;
     --color-3: #9658a0;
-    --color-4:#898982;
+    --color-4: #898982;
 }
+
 body {
     width: 100%;
 }
---NavBar--
-header {
+
+--NavBar-- header {
     width: 100%;
 }
+
 .nav ul {
     text-decoration: none;
     margin-right: 10%;
     list-style: none;
 }
+
 .nav-li {
- display: inline-flex;  
-  float: inline-end;
-  list-style: none;
-    
-   
+    display: inline-flex;
+    float: inline-end;
+    list-style: none;
+
+
 }
+
 .nav-a {
-    text-transform: uppercase; 
+    text-transform: uppercase;
     padding: 20px;
     margin-top: 0;
     text-decoration: none;
-    color: var(--color-3)   
+    color: var(--color-3)
 }
 
-nav a:hover{
+nav a:hover {
     color: var(--color-4);
     font-weight: bold;
-   
+
 }
 
 .nav-header {
@@ -50,33 +55,36 @@ nav a:hover{
     width: 100%;
     background-color: var(--color-1);
 }
-.navbar h5{
+
+.navbar h5 {
     display: flex;
     color: black;
-    text-transform: uppercase; 
+    text-transform: uppercase;
 }
+
 .navbar img {
     display: flex;
     width: 40px;
 }
 
-#input-header {
-    width: 550px;
-    margin-top: 2%;
-}
-
-.input-group-append {
-    margin-top: 2%;
-}
-
---fim--
-
-.container-md {
-    margin-top: 10%;
+--fim-- 
+.h5-contato-text {
+    color: var(--color-1);
+    text-decoration: solid color var(--color-3);
+    display: flex;
+    text-transform: uppercase;
+    justify-content: center;
     text-align: center;
-    color:var(--color-3);
- 
-   
+    margin-top: 8%;
+    margin-bottom: 2%;
+    font-size: xx-large;
+    background-color: var(--color-3);
+}
+.h5-contato {
+    width: 100%;
+    background-color: var(--color-3);
+    text-align: center;
+    margin-top: 10%;
 }
 
 .container-md h3 {
@@ -85,91 +93,102 @@ nav a:hover{
     text-align: center;
     margin-bottom: 5%;
     color: var(--color-3);
+    width: 100%;
 }
-
+.container-md {
+    margin-top: 10%;
+    text-align: center;
+    color: var(--color-3);
+}
 .mb-3 {
     width: 50%;
- margin-left: 25%;
+    margin-left: 25%;
 }
 
 .botao-contato {
- margin-top: 3%;
- margin-left: 45%;
- border-radius: 10%;
-
- background-color: var(--color-1);
- border-color: var(--color-2);
+    margin-top: 3%;
+    border-radius: 10%;
+    background-color: var(--color-3);
+    color: var(--color-1);
 }
-
-
 /*footer*/
- footer {
+footer {
     width: 100%;
     margin-top: 300px;
     align-items: center;
     text-align: center;
- }
+}
+
 .container-footer {
-  
+
     max-width: 1400px;
     padding: 0 4%;
-    margin:auto;
+    margin: auto;
     align-items: center;
-   
+
 
 }
+
 .row-footer {
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
 
 }
+
 .footer-col {
     width: 25%;
-    
+
 
 }
+
 .footer-col h4 {
     font-size: 18px;
     color: black;
-    margin-bottom:20px;
-    position:relative;
-    text-transform:uppercase;
+    margin-bottom: 20px;
+    position: relative;
+    text-transform: uppercase;
     margin-left: 36px;
     margin-top: 10%;
 }
+
 .footer-col ul {
     list-style: none;
 
 }
+
 .footer-col ul li {
-    margin:-1px ;
-    
+    margin: -1px;
+
 }
+
 .footer-col ul li a {
-    font-size:15px ;
+    font-size: 15px;
     color: var(--color-3);
     text-decoration: none;
     display: block;
     transition: all 0.3s ease;
-  
-   
+
+
 }
+
 .footer-col ul li a:hover {
     color: var(--color-3);
-  
+
 }
-.footer-col  p {
-    font-size:15px ;
+
+.footer-col p {
+    font-size: 15px;
     color: var(--color-3);
     text-decoration: none;
     font-weight: 300;
     display: block;
     transition: all 0.3s ease;
-  
+
 }
+
 .footer-col ul li p {
-    margin:-1px ;
-    
+    margin: -1px;
+
 }
 
 
