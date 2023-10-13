@@ -3,10 +3,10 @@ package pacote_viagem;
 public class Pacote_viagem {
 
 	private int id;
-	private int idPassagem_aerea;
-	private int idHotel;
+	private int id_Passagem_aerea;
+	private int id_hotel;
 	private String preco;
-	private String formaPagamento;
+	private String forma_pagamento;
 
 	public Pacote_viagem() {
 	}
@@ -19,20 +19,20 @@ public class Pacote_viagem {
 		this.id = id;
 	}
 
-	public int getIdPassagem_aerea() {
-		return idPassagem_aerea;
+	public int getId_Passagem_aerea() {
+		return id_Passagem_aerea;
 	}
 
-	public void setIdPassagem_aerea(int idPassagem_aerea) {
-		this.idPassagem_aerea = idPassagem_aerea;
+	public void setId_Passagem_aerea(int id_Passagem_aerea) {
+		this.id_Passagem_aerea = id_Passagem_aerea;
 	}
 
-	public int getIdHotel() {
-		return idHotel;
+	public int getId_Hotel() {
+		return id_hotel;
 	}
 
-	public void setIdHotel(int idHotel) {
-		this.idHotel = idHotel;
+	public void setId_Hotel(int id_Hotel) {
+		this.id_hotel = id_Hotel;
 	}
 
 	public String getPreco() {
@@ -43,11 +43,11 @@ public class Pacote_viagem {
 		this.preco = preco;
 	}
 
-	public String getFormaPagamento() {
-		return formaPagamento;
+	public String getForma_Pagamento() {
+		return forma_pagamento;
 	}
 
-	public void setFormaPagamento(String formaPagamento) {
-		this.formaPagamento = formaPagamento;
+	public void setForma_Pagamento(String forma_pagamento) {
+		this.forma_pagamento = forma_pagamento;
 	}
 }

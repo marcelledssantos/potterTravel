@@ -5,10 +5,16 @@ import cia_aerea.Cia_aerea;
 import cia_aerea.Cia_aereaDAO;
 import cliente.Cliente;
 import cliente.ClienteDAO;
+import cliente_pacote.Cliente_pacote;
+import cliente_pacote.Cliente_pacoteDAO;
 import hotel.Hotel;
 import hotel.HotelDAO;
+import pacote_viagem.Pacote_viagem;
+import pacote_viagem.Pacote_viagemDAO;
 import passagem_aerea.Passagem_aerea;
 import passagem_aerea.Passagem_aereaDAO;
+import promocao.Promocao;
+import promocao.PromocaoDAO;
 import viagem.Viagem;
 import viagem.ViagemDAO;
 import java.text.ParseException;
@@ -28,6 +34,12 @@ public class Console {
 		Passagem_aerea passagem_aerea = new Passagem_aerea();
 		HotelDAO hotelDAO = new HotelDAO();
 		Hotel hotel = new Hotel();
+		Pacote_viagemDAO pacote_viagemDAO = new Pacote_viagemDAO();
+		Pacote_viagem pacote_viagem = new Pacote_viagem();
+		Cliente_pacoteDAO cliente_pacoteDAO = new Cliente_pacoteDAO();
+		Cliente_pacote cliente_pacote = new Cliente_pacote();
+		PromocaoDAO promocaoDAO = new PromocaoDAO();
+		Promocao promocao = new Promocao();
 		Scanner entrada = new Scanner(System.in);
 
 		int menu = 1;
@@ -40,6 +52,9 @@ public class Console {
 			System.out.println("3. Menu Cia Aérea");
 			System.out.println("4. Menu Passagem Aérea");
 			System.out.println("5. Menu Hotel");
+			System.out.println("6. Menu Pacote viagem");
+			System.out.println("7. Menu Cliente pacote");
+			System.out.println("8. Menu Promoçao");
 			System.out.println("0. Sair");
 			menu = entrada.nextInt();
 			entrada.nextLine();
@@ -353,21 +368,22 @@ public class Console {
 					entrada.nextLine();
 					break;
 				}
-				
+
 				case 3: { // Update hotel bug, não está editando
-						Hotel hotelUpdate = new Hotel();
-						System.out.println("Digite o nome do hotel: ");
-						String NomeUpdate = entrada.nextLine();
-						entrada.nextLine();
-						hotelUpdate.setNome(NomeUpdate);
-						System.out.println("Digite a cidade ");
-						String cidadeUpdate = entrada.nextLine();
-						hotelUpdate.setCidade(cidadeUpdate);
-						System.out.println("Hotel alterado com sucesso");
-						System.out.println();
-						break;
+					Hotel hotelUpdate = new Hotel();
+					System.out.println("Digite o nome do hotel: ");
+					String NomeUpdate = entrada.nextLine();
+					entrada.nextLine();
+					hotelUpdate.setNome(NomeUpdate);
+					System.out.println("Digite a cidade ");
+					String cidadeUpdate = entrada.nextLine();
+					hotelUpdate.setCidade(cidadeUpdate);
+
+					System.out.println("Hotel alterado com sucesso");
+					System.out.println();
+					break;
 				}
-				
+
 				case 4: // Delete Passagem aerea
 					System.out.println("Digite o ID do hotel que deseja deletar: ");
 					int idDelete = entrada.nextInt();
@@ -388,19 +404,198 @@ public class Console {
 
 				switch (menu) {
 
-				case 1: // pacote viagem {
-					System.out.println("Digite o Id: ");
+				case 1: // pacote viagem bug, está salvando 2 id {
+					System.out.println("Digite o Id da passagem aérea: ");
+					entrada.nextInt();
+					int id_passagem_aerea = entrada.nextInt();
+					pacote_viagem.setId_Passagem_aerea(id_passagem_aerea);
+					System.out.println("Digite o Id do hotel: ");
+					entrada.nextInt();
+					int id_hotel = entrada.nextInt();
+					pacote_viagem.setId_Hotel(id_hotel);
+					System.out.println("Digite o valor do pacote");
 					entrada.nextLine();
-					String nome = entrada.nextLine();
-					cia_aerea.setNome(nome);
-					cia_aereaDAO.salvarCia_Aerea(cia_aerea);
-					System.out.println("Cia aérea cadastrada com sucesso!");
+					String preco = entrada.nextLine();
+					pacote_viagem.setPreco(preco);
+					System.out.println("Digite a forma de pagamento");
+					String forma_pagamento = entrada.nextLine();
+					pacote_viagem.setForma_Pagamento(forma_pagamento);
+					pacote_viagemDAO.salvarPacote_viagem(pacote_viagem);
+					System.out.println("Pacote viagem cadastrado com sucesso!");
+					System.out.println();
+					break;
+
+				case 2: { // Read hotel
+					for (Pacote_viagem c : pacote_viagemDAO.exibirPacote_viagem()) {
+						System.out.println("Id da passagem aérea " + c.getId_Passagem_aerea());
+						System.out.println("Id do hotel: " + c.getId_Hotel());
+						System.out.println("Preço do pacote: " + c.getPreco());
+						System.out.println("Forma de pagamento: " + c.getForma_Pagamento());
+					}
+					System.out.println("Digite enter para finalizar");
+					entrada.nextLine();
+					entrada.nextLine();
+					break;
+				}
+
+				case 3: { // Update pacote_viagem 
+					Pacote_viagem pacote_viagemUpdate = new Pacote_viagem();
+					System.out.println("Digite o id que deseja editar");
+					int idUpdate = entrada.nextInt();
+					pacote_viagemUpdate.setId(idUpdate);
+					System.out.println("Digite o id da passagem aérea: ");
+					int Id_passagem_aereaUpdate = entrada.nextInt();
+					pacote_viagemUpdate.setId_Passagem_aerea(Id_passagem_aereaUpdate);
+					System.out.println("Digite o id do hotel: ");
+					int Id_hotelUpdate = entrada.nextInt();
+					entrada.nextLine();
+					pacote_viagemUpdate.setId_Hotel(Id_hotelUpdate);
+					System.out.println("Digite o preço do pacote viagem: ");
+					String precoUpdate = entrada.nextLine();
+					pacote_viagemUpdate.setPreco(precoUpdate);
+					System.out.println("Digite a forma de pagamento: ");
+					String forma_pagamentoUpdate = entrada.nextLine();
+					pacote_viagemUpdate.setForma_Pagamento(forma_pagamentoUpdate);
+					pacote_viagemDAO.update(pacote_viagemUpdate);
+					System.out.println("Pacote viagem  alterado com sucesso");
 					System.out.println();
 					break;
 				}
- 
+
+				case 4: // Delete Passagem aerea
+					System.out.println("Digite o ID do pacote que deseja deletar: ");
+					int idDelete = entrada.nextInt();
+					Pacote_viagemDAO.removeById_Pacote_viagem(idDelete);
+					System.out.println("Pacote deletado com sucesso!");
+					System.out.println();
+					break;
+				}
+
+			case 7:
+
+				// Menu Cliente_pacote
+				System.out.println("Digite qual opção deseja:");
+				System.out.println("1. Cadastrar cliente e pacote:");
+				System.out.println("2. Exibir todos clientes e pacotes:");
+				System.out.println("3. Atualizar clientes e pacotes:");
+				System.out.println("4. Deletar clientes e pacotes :");
+				menu = entrada.nextInt();
+
+				switch (menu) {
+
+				case 1: // Create Cliente_pacote{
+					System.out.println("Digite o Id: ");
+					entrada.nextLine();
+					int id_pacote_viagem = entrada.nextInt();
+					cliente_pacote.setId_pacote_viagem(id_pacote_viagem);
+					System.out.println("Digite o Id do cliente: ");
+					entrada.nextLine();
+					int id_cliente = entrada.nextInt();
+					cliente_pacote.setId_Cliente(id_cliente);
+					cliente_pacoteDAO.salvarCliente_pacote(cliente_pacote);
+					System.out.println("Cliente e pacote cadastrados com sucesso!");
+					System.out.println();
+					break;
+
+				case 2: // Read Cliente_pacote
+					for (Cliente_pacote c : cliente_pacoteDAO.exibirCliente_pacote()) {
+						System.out.println("Id do cliente: " + c.getId_Cliente());
+						System.out.println("Id do pacote viagem : " + c.getId_pacote_viagem());
+					}
+					System.out.println("Digite enter para finalizar");
+					entrada.nextLine();
+					entrada.nextLine();
+					break;
+
+				case 3: { // Update cliente_pacote
+					Cliente_pacote cliente_pacoteUpdate = new Cliente_pacote();
+					System.out.println("Digite o id: ");
+					int IdUpdate = entrada.nextInt();
+					entrada.nextLine();
+					cliente_pacoteUpdate.setId(IdUpdate);
+					System.out.println("Digite o id do cliente: ");
+					int Id_clienteUpdate = entrada.nextInt();
+					entrada.nextLine();
+					cliente_pacoteUpdate.setId_Cliente(Id_clienteUpdate);
+					System.out.println("Digite o id do pacote viagem ");
+					int id_pacote_viagemUpdate = entrada.nextInt();
+					cliente_pacoteUpdate.setId_pacote_viagem(id_pacote_viagemUpdate);
+					cliente_pacoteDAO.update(cliente_pacoteUpdate);
+					System.out.println("Cliente e pacote viagem alterados com sucesso");
+					System.out.println();
+					break;
+				}
+
+				case 4: // Delete cliente pacote
+					System.out.println("Digite o ID que deseja deletar: ");
+					int idDelete = entrada.nextInt();
+					cliente_pacoteDAO.removeById_Cliente_pacote(idDelete);
+					System.out.println("Pacote deletado com sucesso!");
+					System.out.println();
+					break;
+				}
+
+			case 8: {
+				// Menu Promocao
+				System.out.println("Digite qual opção deseja:");
+				System.out.println("1. Cadastrar promoção:");
+				System.out.println("2. Exibir promoções:");
+				System.out.println("3. Atualizar promoção:");
+				System.out.println("4. Deletar promoção:");
+				menu = entrada.nextInt();
+			}
+				switch (menu) {
+
+				case 1: // Create Promocao {
+					System.out.println("Digite o Id da promoçao: ");
+					int id_pacote_viagem = entrada.nextInt();
+					promocao.setId_pacote_viagem(id_pacote_viagem);
+					entrada.nextLine();
+					System.out.println("Digite o novo valor:");
+					Float novo_preco = entrada.nextFloat();
+					promocao.setNovo_Preco(novo_preco);
+					promocaoDAO.salvarPromocao(promocao);
+					System.out.println("Novo valor cadastrado com sucesso!");
+					System.out.println();
+					break;
+
+				case 2: // Read Promocao
+					for (Promocao c : promocaoDAO.exibirPromocao()) {
+						System.out.println("Id do pacote viagem: " + c.getId_pacote_viagem());
+						System.out.println("Valor atualizado com desconto : " + c.getNovo_preco());
+					}
+					System.out.println("Digite enter para finalizar");
+					entrada.nextLine();
+					entrada.nextLine();
+					break;
+
+				case 3: { // Update promocao
+					Promocao promocaoUpdate = new Promocao();
+					System.out.println("Digite o id: ");
+					int IdUpdate = entrada.nextInt();
+					entrada.nextLine();
+					promocaoUpdate.setId(IdUpdate);
+					System.out.println("Digite o id do pacote viagem: ");
+					int Id_pacote_viagemUpdate = entrada.nextInt();
+					entrada.nextLine();
+					promocaoUpdate.setId_pacote_viagem(Id_pacote_viagemUpdate);
+					System.out.println("Digite o novo valor do pacote:");
+					float Novo_precoUpdate = entrada.nextFloat();
+					promocaoUpdate.setNovo_Preco(Novo_precoUpdate);
+					promocaoDAO.update(promocaoUpdate);
+					System.out.println("O valor foi alterado com sucesso!");
+					System.out.println();
+					break;
+				}
+				case 4: // Delete promocao
+					System.out.println("Digite o ID que deseja deletar: ");
+					int idDelete = entrada.nextInt();
+					promocaoDAO.removeById_Promocao(idDelete);
+					System.out.println("Promocao deletada com sucesso!");
+					System.out.println();
+					break;
+				}
 			}
 		}
 	}
-}
-
+} 

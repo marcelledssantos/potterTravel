@@ -1,4 +1,4 @@
-package pacote_viagem;
+package promocao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,13 +6,13 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import cia_aerea.Cia_aerea;
+import cliente_pacote.Cliente_pacote;
 import factory.ConnectionFactory;
 
-public class Pacote_viagemDAO {
-	public void salvarPacote_viagem(Pacote_viagem pacote_viagem) {
-		String sql = "INSERT INTO pacote_viagem(id_passagem_aerea, id_hotel, preco, forma_pagamento)"
-				+ "VALUES(?,?,?,?)";
+public class PromocaoDAO {
+
+	public void salvarPromocao(Promocao promocao) {
+		String sql = "INSERT INTO Promocao (id_pacote_viagem, novo_preco)" + "VALUES(?,?)";
 
 		Connection conn = null;
 
@@ -23,10 +23,8 @@ public class Pacote_viagemDAO {
 
 			pstm = conn.prepareStatement(sql);
 
-			pstm.setInt(1, pacote_viagem.getId_Passagem_aerea());
-			pstm.setInt(2, pacote_viagem.getId_Hotel());
-			pstm.setString(3, pacote_viagem.getPreco());
-			pstm.setString(4, pacote_viagem.getForma_Pagamento());
+			pstm.setInt(1, promocao.getId_pacote_viagem());
+			pstm.setFloat(2, promocao.getNovo_preco());
 
 			pstm.execute();
 
@@ -53,13 +51,13 @@ public class Pacote_viagemDAO {
 		}
 	}
 
-	public List<Pacote_viagem> exibirPacote_viagem() {
-		String sql = "SELECT * FROM pacote_viagem";
-		List<Pacote_viagem> pacotes_viagens = new ArrayList<Pacote_viagem>();
-		Pacote_viagem pacote_viagem = new Pacote_viagem();
+	public List<Promocao> exibirPromocao() {
+		List<Promocao> promocoes = new ArrayList<Promocao>();
+		Promocao promocao = new Promocao();
+
+		String sql = "SELECT * FROM promocao";
 		Connection conn = null;
 		PreparedStatement pstm = null;
-
 		ResultSet rset = null;
 
 		try {
@@ -69,12 +67,10 @@ public class Pacote_viagemDAO {
 
 			while (rset.next()) {
 
-				pacote_viagem.setId(rset.getInt("id"));
-				pacote_viagem.setId_Passagem_aerea(rset.getInt("id_passagem_aerea"));
-				pacote_viagem.setId_Hotel(rset.getInt("id_hotel"));
-				pacote_viagem.setPreco(rset.getString("preco"));
-				pacote_viagem.setForma_Pagamento(rset.getString("forma_pagamento"));
-				pacotes_viagens.add(pacote_viagem);
+				promocao.setId(rset.getInt("id"));
+				promocao.setId_pacote_viagem(rset.getInt("id_pacote_viagem"));
+				promocao.setNovo_Preco(rset.getFloat("novo_preco"));
+				promocoes.add(promocao);
 			}
 
 		} catch (Exception e) {
@@ -95,12 +91,11 @@ public class Pacote_viagemDAO {
 				e.printStackTrace();
 			}
 		}
-		return pacotes_viagens;
+		return promocoes;
 	}
 
-	public void update(Pacote_viagem pacote_viagem) {
-		String sql = "UPDATE pacote_viagem SET id_passagem_aerea = ?, id_hotel = ?, preco = ?, forma_pagamento = ? "
-				+ "WHERE id = ?";
+	public void update(Promocao promocao) {
+		String sql = "UPDATE promocao SET id_pacote_viagem = ?, novo_preco = ?  WHERE id = ?";
 
 		Connection conn = null;
 		PreparedStatement pstm = null;
@@ -108,11 +103,9 @@ public class Pacote_viagemDAO {
 		try {
 			conn = ConnectionFactory.createConnectionToMySQL();
 			pstm = conn.prepareStatement(sql);
-			pstm.setInt(1, pacote_viagem.getId_Passagem_aerea());
-			pstm.setInt(2, pacote_viagem.getId_Hotel());
-			pstm.setString(3, pacote_viagem.getPreco());
-			pstm.setString(4, pacote_viagem.getForma_Pagamento());
-			pstm.setInt(5, pacote_viagem.getId());
+			pstm.setInt(1, promocao.getId_pacote_viagem());
+			pstm.setFloat(2, promocao.getNovo_preco());
+			pstm.setInt(3, promocao.getId());
 			pstm.execute();
 
 		} catch (Exception e) {
@@ -134,8 +127,10 @@ public class Pacote_viagemDAO {
 		}
 	}
 
-	public static  void removeById_Pacote_viagem(int id_pacote_viagem) {
-		String sql = "DELETE FROM pacote_viagem WHERE id = ?";
+
+
+	public void removeById_Promocao(int id) {
+		String sql = "DELETE FROM promocao WHERE id = ?";
 
 		Connection conn = null;
 		PreparedStatement pstm = null;
@@ -143,7 +138,7 @@ public class Pacote_viagemDAO {
 		try {
 			conn = ConnectionFactory.createConnectionToMySQL();
 			pstm = conn.prepareStatement(sql);
-			pstm.setInt(1, id_pacote_viagem);
+			pstm.setInt(1, id);
 			pstm.execute();
 
 		} catch (Exception e) {

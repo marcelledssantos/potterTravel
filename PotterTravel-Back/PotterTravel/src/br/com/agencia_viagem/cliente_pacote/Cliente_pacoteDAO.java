@@ -1,18 +1,16 @@
-package pacote_viagem;
+package cliente_pacote;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-
-import cia_aerea.Cia_aerea;
 import factory.ConnectionFactory;
 
-public class Pacote_viagemDAO {
-	public void salvarPacote_viagem(Pacote_viagem pacote_viagem) {
-		String sql = "INSERT INTO pacote_viagem(id_passagem_aerea, id_hotel, preco, forma_pagamento)"
-				+ "VALUES(?,?,?,?)";
+public class Cliente_pacoteDAO {
+
+	public void salvarCliente_pacote(Cliente_pacote cliente_pacote) {
+		String sql = "INSERT INTO Cliente_pacote (id_pacote_viagem, id_cliente)" + "VALUES(?,?)";
 
 		Connection conn = null;
 
@@ -23,10 +21,8 @@ public class Pacote_viagemDAO {
 
 			pstm = conn.prepareStatement(sql);
 
-			pstm.setInt(1, pacote_viagem.getId_Passagem_aerea());
-			pstm.setInt(2, pacote_viagem.getId_Hotel());
-			pstm.setString(3, pacote_viagem.getPreco());
-			pstm.setString(4, pacote_viagem.getForma_Pagamento());
+			pstm.setInt(1, cliente_pacote.getId_pacote_viagem());
+			pstm.setInt(2, cliente_pacote.getId_Cliente());
 
 			pstm.execute();
 
@@ -53,13 +49,13 @@ public class Pacote_viagemDAO {
 		}
 	}
 
-	public List<Pacote_viagem> exibirPacote_viagem() {
-		String sql = "SELECT * FROM pacote_viagem";
-		List<Pacote_viagem> pacotes_viagens = new ArrayList<Pacote_viagem>();
-		Pacote_viagem pacote_viagem = new Pacote_viagem();
+	public List<Cliente_pacote> exibirCliente_pacote() {
+		List<Cliente_pacote> clientes_pacotes = new ArrayList<Cliente_pacote>();
+		Cliente_pacote cliente_pacote = new Cliente_pacote();
+
+		String sql = "SELECT * FROM cliente_pacote";
 		Connection conn = null;
 		PreparedStatement pstm = null;
-
 		ResultSet rset = null;
 
 		try {
@@ -69,12 +65,10 @@ public class Pacote_viagemDAO {
 
 			while (rset.next()) {
 
-				pacote_viagem.setId(rset.getInt("id"));
-				pacote_viagem.setId_Passagem_aerea(rset.getInt("id_passagem_aerea"));
-				pacote_viagem.setId_Hotel(rset.getInt("id_hotel"));
-				pacote_viagem.setPreco(rset.getString("preco"));
-				pacote_viagem.setForma_Pagamento(rset.getString("forma_pagamento"));
-				pacotes_viagens.add(pacote_viagem);
+				cliente_pacote.setId(rset.getInt("id"));
+				cliente_pacote.setId_Cliente(rset.getInt("id_cliente"));
+				cliente_pacote.setId_pacote_viagem(rset.getInt("id_pacote_viagem"));
+				clientes_pacotes.add(cliente_pacote);
 			}
 
 		} catch (Exception e) {
@@ -95,12 +89,11 @@ public class Pacote_viagemDAO {
 				e.printStackTrace();
 			}
 		}
-		return pacotes_viagens;
+		return clientes_pacotes;
 	}
 
-	public void update(Pacote_viagem pacote_viagem) {
-		String sql = "UPDATE pacote_viagem SET id_passagem_aerea = ?, id_hotel = ?, preco = ?, forma_pagamento = ? "
-				+ "WHERE id = ?";
+	public void update(Cliente_pacote cliente_pacote) {
+		String sql = "UPDATE cliente_pacote SET id_cliente = ?, id_pacote_viagem = ? WHERE id = ?";
 
 		Connection conn = null;
 		PreparedStatement pstm = null;
@@ -108,11 +101,9 @@ public class Pacote_viagemDAO {
 		try {
 			conn = ConnectionFactory.createConnectionToMySQL();
 			pstm = conn.prepareStatement(sql);
-			pstm.setInt(1, pacote_viagem.getId_Passagem_aerea());
-			pstm.setInt(2, pacote_viagem.getId_Hotel());
-			pstm.setString(3, pacote_viagem.getPreco());
-			pstm.setString(4, pacote_viagem.getForma_Pagamento());
-			pstm.setInt(5, pacote_viagem.getId());
+			pstm.setInt(1, cliente_pacote.getId_Cliente());
+			pstm.setInt(2, cliente_pacote.getId_pacote_viagem());
+			pstm.setInt(3, cliente_pacote.getId());
 			pstm.execute();
 
 		} catch (Exception e) {
@@ -134,8 +125,8 @@ public class Pacote_viagemDAO {
 		}
 	}
 
-	public static  void removeById_Pacote_viagem(int id_pacote_viagem) {
-		String sql = "DELETE FROM pacote_viagem WHERE id = ?";
+	public void removeById_Cliente_pacote(int id) {
+		String sql = "DELETE FROM cliente_pacote WHERE id = ?";
 
 		Connection conn = null;
 		PreparedStatement pstm = null;
@@ -143,7 +134,7 @@ public class Pacote_viagemDAO {
 		try {
 			conn = ConnectionFactory.createConnectionToMySQL();
 			pstm = conn.prepareStatement(sql);
-			pstm.setInt(1, id_pacote_viagem);
+			pstm.setInt(1, id);
 			pstm.execute();
 
 		} catch (Exception e) {
