@@ -11,7 +11,7 @@ import factory.ConnectionFactory;
 public class ClienteDAO {
 
 	public void salvarCliente(Cliente cliente) {
-		String sql = "INSERT INTO cliente(nome,cpf,telefone,endereco,email,senha,ofertas)" + "VALUES(?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO cliente(nome, cpf, telefone, endereco, email, senha)" + "VALUES(?,?,?,?,?,?,?)";
 
 		Connection conn = null;
 
@@ -33,9 +33,6 @@ public class ClienteDAO {
 			pstm.setString(5, cliente.getEmail());
 
 			pstm.setString(6, cliente.getSenha());
-
-			pstm.setBoolean(7, cliente.getOfertas());
-
 			pstm.execute();
 
 		} catch (Exception e) {
@@ -85,7 +82,6 @@ public class ClienteDAO {
 				cliente.setEndereco(rset.getString("endereco"));
 				cliente.setEmail(rset.getString("email"));
 				cliente.setSenha(rset.getString("senha"));
-				cliente.setOfertas(rset.getBoolean("ofertas"));
 				clientes.add(cliente);
 			}
 		} catch (Exception e) {

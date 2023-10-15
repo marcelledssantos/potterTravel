@@ -9,14 +9,10 @@ public class Cliente{
 	private String endereco;
 	private String email;
 	private String senha;
-	private boolean ofertas;
+	
 	
 	public Cliente() {}
 	
-	public Cliente(String email, boolean ofertas) {
-		this.email = email;
-		this.ofertas = ofertas;
-	}
 	
 	public int getId() {
 		return id;
@@ -72,15 +68,6 @@ public class Cliente{
 
 	public void setSenha(String senha) {
 		this.senha = senha;
-	}
-	
-	public boolean getOfertas() {
-		return ofertas;
-	}
-
-	public void setOfertas(boolean ofertas) {
-		this.ofertas = ofertas;
-
 	}
 	}
 
