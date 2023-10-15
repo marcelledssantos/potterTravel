@@ -11,7 +11,7 @@ import factory.ConnectionFactory;
 public class ClienteDAO {
 
 	public void salvarCliente(Cliente cliente) {
-		String sql = "INSERT INTO cliente(nome, cpf, telefone, endereco, email, senha)" + "VALUES(?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO cliente(nome, cpf, telefone, endereco, email, senha)" + "VALUES(?,?,?,?,?,?)";
 
 		Connection conn = null;
 
