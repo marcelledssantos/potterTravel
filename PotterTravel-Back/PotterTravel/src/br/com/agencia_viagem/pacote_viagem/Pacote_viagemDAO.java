@@ -56,7 +56,6 @@ public class Pacote_viagemDAO {
 	public List<Pacote_viagem> exibirPacote_viagem() {
 		String sql = "SELECT * FROM pacote_viagem";
 		List<Pacote_viagem> pacotes_viagens = new ArrayList<Pacote_viagem>();
-		Pacote_viagem pacote_viagem = new Pacote_viagem();
 		Connection conn = null;
 		PreparedStatement pstm = null;
 
@@ -68,7 +67,8 @@ public class Pacote_viagemDAO {
 			rset = pstm.executeQuery();
 
 			while (rset.next()) {
-
+				
+				Pacote_viagem pacote_viagem = new Pacote_viagem();
 				pacote_viagem.setId(rset.getInt("id"));
 				pacote_viagem.setId_Passagem_aerea(rset.getInt("id_passagem_aerea"));
 				pacote_viagem.setId_Hotel(rset.getInt("id_hotel"));

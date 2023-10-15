@@ -72,8 +72,8 @@ public class ViagemDAO {
 			rset = pstm.executeQuery();
 
 			while (rset.next()) {
+				
 				Viagem viagem = new Viagem();
-
 				viagem.setId(rset.getInt("id"));
 				viagem.setOrigem(rset.getString("origem"));
 				viagem.setDestino(rset.getString("destino"));

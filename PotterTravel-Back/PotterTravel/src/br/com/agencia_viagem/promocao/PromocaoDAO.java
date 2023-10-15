@@ -5,8 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-
-import cliente_pacote.Cliente_pacote;
 import factory.ConnectionFactory;
 
 public class PromocaoDAO {
@@ -53,7 +51,7 @@ public class PromocaoDAO {
 
 	public List<Promocao> exibirPromocao() {
 		List<Promocao> promocoes = new ArrayList<Promocao>();
-		Promocao promocao = new Promocao();
+		
 
 		String sql = "SELECT * FROM promocao";
 		Connection conn = null;
@@ -66,7 +64,8 @@ public class PromocaoDAO {
 			rset = pstm.executeQuery();
 
 			while (rset.next()) {
-
+				
+				Promocao promocao = new Promocao();
 				promocao.setId(rset.getInt("id"));
 				promocao.setId_pacote_viagem(rset.getInt("id_pacote_viagem"));
 				promocao.setNovo_Preco(rset.getFloat("novo_preco"));

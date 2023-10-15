@@ -53,7 +53,7 @@ public class HotelDAO {
 	public List<Hotel> exibirHotel() {
 		String sql = "SELECT * FROM hotel";
 		List<Hotel> hoteis = new ArrayList<Hotel>();
-		Hotel hotel = new Hotel();
+		
 		Connection conn = null;
 		PreparedStatement pstm = null;
 
@@ -65,7 +65,8 @@ public class HotelDAO {
 			rset = pstm.executeQuery();
 
 			while (rset.next()) {
-
+				
+				Hotel hotel = new Hotel();
 				hotel.setId(rset.getInt("id"));
 				hotel.setNome(rset.getString("nome"));
 				hotel.setCidade(rset.getString("cidade"));

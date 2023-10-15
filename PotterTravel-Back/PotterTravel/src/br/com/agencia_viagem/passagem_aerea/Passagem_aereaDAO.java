@@ -53,7 +53,7 @@ public class Passagem_aereaDAO {
 
 	public List<Passagem_aerea> exibirPassagem_aerea() {
 		List<Passagem_aerea> passagens_aereas = new ArrayList<Passagem_aerea>();
-		Passagem_aerea passagem_aerea = new Passagem_aerea();
+		
 
 		String sql = "SELECT * FROM passagem_aerea";
 		Connection conn = null;
@@ -66,7 +66,8 @@ public class Passagem_aereaDAO {
 			rset = pstm.executeQuery();
 
 			while (rset.next()) {
-
+				
+				Passagem_aerea passagem_aerea = new Passagem_aerea();
 				passagem_aerea.setId(rset.getInt("id"));
 				passagem_aerea.setId_viagem(rset.getInt("id_viagem"));
 				passagem_aerea.setId_cia_aerea(rset.getInt("id_cia_aerea"));
@@ -103,9 +104,10 @@ public class Passagem_aereaDAO {
 		try {
 			conn = ConnectionFactory.createConnectionToMySQL();
 			pstm = conn.prepareStatement(sql);
-			pstm.setInt(1, passagem_aerea.getId());
-			pstm.setInt(2, passagem_aerea.getId_viagem());
-			pstm.setInt(3, passagem_aerea.getId_cia_aerea());
+			
+			pstm.setInt(1, passagem_aerea.getId_viagem());
+			pstm.setInt(2, passagem_aerea.getId_cia_aerea());
+			pstm.setInt(3, passagem_aerea.getId());
 			pstm.execute();
 
 		} catch (Exception e) {

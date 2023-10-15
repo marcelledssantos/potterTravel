@@ -49,9 +49,9 @@ public class Cia_aereaDAO {
 	}
 
 	public List<Cia_aerea> exibirCia_aerea() {
-		String sql = "SELECT * FROM cia_aerea";
+		String sql = "select * from cia_aerea";
 		List<Cia_aerea> cias_aereas = new ArrayList<Cia_aerea>();
-		Cia_aerea cia_aerea = new Cia_aerea();
+		
 		Connection conn = null;
 		PreparedStatement pstm = null;
 
@@ -63,7 +63,7 @@ public class Cia_aereaDAO {
 			rset = pstm.executeQuery();
 
 			while (rset.next()) {
-
+				Cia_aerea cia_aerea = new Cia_aerea();
 				cia_aerea.setId(rset.getInt("id"));
 				cia_aerea.setNome(rset.getString("nome"));
 				cias_aereas.add(cia_aerea);
@@ -100,7 +100,7 @@ public class Cia_aereaDAO {
 			conn = ConnectionFactory.createConnectionToMySQL();
 			pstm = conn.prepareStatement(sql);
 			pstm.setString(1, cia_aerea.getNome());
-			pstm.setInt(7, cia_aerea.getId());
+			pstm.setInt(2, cia_aerea.getId());
 			pstm.execute();
 
 		} catch (Exception e) {

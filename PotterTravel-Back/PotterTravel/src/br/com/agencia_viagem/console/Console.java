@@ -60,14 +60,14 @@ public class Console {
 			entrada.nextLine();
 			switch (menu) {
 
-			case 1: // Menu Cliente
+			case 1: { // Menu Cliente
 				System.out.println("Digite qual opção deseja:");
 				System.out.println("1. Cadastrar usuário:");
 				System.out.println("2. Exibir todos usuários:");
 				System.out.println("3. Atualizar usuário:");
 				System.out.println("4. Deletar usuário:");
 				menu = entrada.nextInt();
-
+			}
 				switch (menu) {
 
 				case 1: // Create Cliente
@@ -113,7 +113,6 @@ public class Console {
 					entrada.nextLine();
 					String nomeUpdate = entrada.nextLine();
 					clienteupdate.setNome(nomeUpdate);
-					// bug
 					System.out.println("Digite o novo CPF: ");
 					String cpfUpdate = entrada.nextLine();
 					clienteupdate.setCpf(cpfUpdate);
@@ -142,6 +141,7 @@ public class Console {
 					System.out.println();
 					break;
 				}
+				break;
 
 			case 2: // Menu Viagem
 				System.out.println("Digite qual opção deseja:");
@@ -185,7 +185,7 @@ public class Console {
 					entrada.nextLine();
 					break;
 
-				case 3:// Update viagem BUG
+				case 3:// Update viagem
 					Viagem viagemUpdate = new Viagem();
 					System.out.println("Digite qual ID deseja editar: ");
 					int idUpdate = entrada.nextInt();
@@ -197,11 +197,11 @@ public class Console {
 					System.out.println("Digite o novo destino: ");
 					String destinoUpdate = entrada.nextLine();
 					viagemUpdate.setDestino(destinoUpdate);
-					System.out.println("Digite a nova data: (aaaa-mm-dd)");
-					String novaData_Viagem = entrada.nextLine();
-					LocalDate novaDataConvertida = LocalDate.parse(novaData_Viagem,
+					System.out.println("Digite a nova data de partida: (aaaa-mm-dd)");
+					String data_ViagemUpdate = entrada.nextLine();
+					LocalDate dataUpdateConvertida = LocalDate.parse(data_ViagemUpdate,
 							DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-					viagem.setData_Viagem(novaDataConvertida);
+					viagemUpdate.setData_Viagem(dataUpdateConvertida);
 					System.out.println("Digite o novo horário: ");
 					String horarioUpdate = entrada.nextLine();
 					viagemUpdate.setHorario(horarioUpdate);
@@ -222,6 +222,8 @@ public class Console {
 					entrada.nextLine();
 					break;
 				}
+				break;
+
 			case 3:
 
 				// Menu Cia_aerea
@@ -262,6 +264,7 @@ public class Console {
 					entrada.nextLine();
 					String nomeUpdate = entrada.nextLine();
 					cia_aereaUpdate.setNome(nomeUpdate);
+					cia_aereaDAO.update(cia_aereaUpdate);
 					System.out.println("Cia aérea alterada com sucesso");
 					System.out.println();
 					break;
@@ -273,6 +276,8 @@ public class Console {
 					System.out.println("Cia aérea deletada com sucesso!");
 					break;
 				}
+				break;
+
 			case 4:
 
 				// Menu Passagem aerea
@@ -301,7 +306,7 @@ public class Console {
 
 				case 2: // Read Passagem_aerea
 					for (Passagem_aerea c : passagem_aereaDAO.exibirPassagem_aerea()) {
-						System.out.println("passagem aérea de id: " + c.getId_cia_aerea());
+						System.out.println("Viagem de id: " + c.getId_viagem());
 						System.out.println("conjunta com a cia aérea : " + c.getId_cia_aerea());
 					}
 					System.out.println("Digite enter para finalizar");
@@ -309,17 +314,19 @@ public class Console {
 					entrada.nextLine();
 					break;
 
-				case 3: // Update Passagem aerea // BUG, não está editando
+				case 3: // Update Passagem aerea não está com conexão no banco
 					Passagem_aerea passagem_aereaUpdate = new Passagem_aerea();
 					System.out.println("Digite o novo Id da passagem aérea: ");
 					int idUpdate = entrada.nextInt();
 					passagem_aereaUpdate.setId(idUpdate);
+					entrada.nextLine();
 					System.out.println("Digite o novo Id da viagem: ");
 					int id_viagemUpdate = entrada.nextInt();
 					passagem_aereaUpdate.setId(id_viagemUpdate);
-					System.out.println("Digite o novo Id da passagem aérea: ");
+					System.out.println("Digite o novo Id da cia aérea: ");
 					int id_cia_aereaUpdate = entrada.nextInt();
 					passagem_aereaUpdate.setId(id_cia_aereaUpdate);
+					passagem_aereaDAO.update(passagem_aereaUpdate);
 					System.out.println("Passagem aérea alterada com sucesso");
 					System.out.println();
 					break;
@@ -332,6 +339,7 @@ public class Console {
 					System.out.println();
 					break;
 				}
+				break;
 
 			case 5:
 
@@ -369,7 +377,7 @@ public class Console {
 					break;
 				}
 
-				case 3: { // Update hotel bug, não está editando
+				case 3: { // Update hotel
 					Hotel hotelUpdate = new Hotel();
 					System.out.println("Digite o nome do hotel: ");
 					String NomeUpdate = entrada.nextLine();
@@ -378,7 +386,7 @@ public class Console {
 					System.out.println("Digite a cidade ");
 					String cidadeUpdate = entrada.nextLine();
 					hotelUpdate.setCidade(cidadeUpdate);
-
+					hotelDAO.update(hotelUpdate);
 					System.out.println("Hotel alterado com sucesso");
 					System.out.println();
 					break;
@@ -392,6 +400,8 @@ public class Console {
 					System.out.println();
 					break;
 				}
+				break;
+
 			case 6:
 
 				// Menu Pacote_viagem
@@ -404,17 +414,16 @@ public class Console {
 
 				switch (menu) {
 
-				case 1: // pacote viagem bug, está salvando 2 id {
+				case 1: // pacote viagem {
+
 					System.out.println("Digite o Id da passagem aérea: ");
-					entrada.nextInt();
 					int id_passagem_aerea = entrada.nextInt();
 					pacote_viagem.setId_Passagem_aerea(id_passagem_aerea);
 					System.out.println("Digite o Id do hotel: ");
-					entrada.nextInt();
 					int id_hotel = entrada.nextInt();
 					pacote_viagem.setId_Hotel(id_hotel);
-					System.out.println("Digite o valor do pacote");
 					entrada.nextLine();
+					System.out.println("Digite o valor do pacote");
 					String preco = entrada.nextLine();
 					pacote_viagem.setPreco(preco);
 					System.out.println("Digite a forma de pagamento");
@@ -438,7 +447,7 @@ public class Console {
 					break;
 				}
 
-				case 3: { // Update pacote_viagem 
+				case 3: { // Update pacote_viagem
 					Pacote_viagem pacote_viagemUpdate = new Pacote_viagem();
 					System.out.println("Digite o id que deseja editar");
 					int idUpdate = entrada.nextInt();
@@ -470,6 +479,7 @@ public class Console {
 					System.out.println();
 					break;
 				}
+				break;
 
 			case 7:
 
@@ -484,8 +494,7 @@ public class Console {
 				switch (menu) {
 
 				case 1: // Create Cliente_pacote{
-					System.out.println("Digite o Id: ");
-					entrada.nextLine();
+					System.out.println("Digite o Id do pacote viagem: ");
 					int id_pacote_viagem = entrada.nextInt();
 					cliente_pacote.setId_pacote_viagem(id_pacote_viagem);
 					System.out.println("Digite o Id do cliente: ");
@@ -534,6 +543,7 @@ public class Console {
 					System.out.println();
 					break;
 				}
+				break;
 
 			case 8: {
 				// Menu Promocao
@@ -546,7 +556,7 @@ public class Console {
 			}
 				switch (menu) {
 
-				case 1: // Create Promocao {
+				case 1: // Create Promocao
 					System.out.println("Digite o Id da promoçao: ");
 					int id_pacote_viagem = entrada.nextInt();
 					promocao.setId_pacote_viagem(id_pacote_viagem);
@@ -587,7 +597,7 @@ public class Console {
 					System.out.println();
 					break;
 				}
-				case 4: // Delete promocao
+				case 4: { // Delete promocao
 					System.out.println("Digite o ID que deseja deletar: ");
 					int idDelete = entrada.nextInt();
 					promocaoDAO.removeById_Promocao(idDelete);
@@ -595,7 +605,14 @@ public class Console {
 					System.out.println();
 					break;
 				}
+				}	
+			 case 0: {
+					System.out.println("Agradecemos sua visita!");
+					entrada.close();
+				}
+			 
+				}
 			}
 		}
 	}
-} 
+

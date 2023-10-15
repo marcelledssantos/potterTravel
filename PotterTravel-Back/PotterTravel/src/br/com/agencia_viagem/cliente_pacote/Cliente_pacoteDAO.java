@@ -51,7 +51,7 @@ public class Cliente_pacoteDAO {
 
 	public List<Cliente_pacote> exibirCliente_pacote() {
 		List<Cliente_pacote> clientes_pacotes = new ArrayList<Cliente_pacote>();
-		Cliente_pacote cliente_pacote = new Cliente_pacote();
+		
 
 		String sql = "SELECT * FROM cliente_pacote";
 		Connection conn = null;
@@ -65,6 +65,7 @@ public class Cliente_pacoteDAO {
 
 			while (rset.next()) {
 
+				Cliente_pacote cliente_pacote = new Cliente_pacote();
 				cliente_pacote.setId(rset.getInt("id"));
 				cliente_pacote.setId_Cliente(rset.getInt("id_cliente"));
 				cliente_pacote.setId_pacote_viagem(rset.getInt("id_pacote_viagem"));
