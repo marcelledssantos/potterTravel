@@ -9,8 +9,7 @@ cpf varchar(40),
 telefone varchar(40),
 endereco varchar(255),
 email varchar(255),
-senha varchar(40),
-ofertas boolean
+senha varchar(40)
 );
 
 CREATE TABLE viagem(
