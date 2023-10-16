@@ -17,7 +17,8 @@ body {
     width: 100%;
 }
 
---NavBar-- header {
+--NavBar-- 
+header {
     width: 100%;
 }
 
@@ -31,8 +32,6 @@ body {
     display: inline-flex;
     float: inline-end;
     list-style: none;
-
-
 }
 
 .nav-a {
@@ -67,24 +66,19 @@ nav a:hover {
     width: 40px;
 }
 
---fim-- 
-.h5-contato-text {
+/*fim*/
+
+.h5-contato h5 {
+
     color: var(--color-1);
     text-decoration: solid color var(--color-3);
     display: flex;
-    text-transform: uppercase;
     justify-content: center;
     text-align: center;
     margin-top: 8%;
     margin-bottom: 2%;
     font-size: xx-large;
-    background-color: var(--color-3);
-}
-.h5-contato {
-    width: 100%;
-    background-color: var(--color-3);
-    text-align: center;
-    margin-top: 10%;
+    background-color: var(--color-4);
 }
 
 .container-md h3 {
@@ -95,26 +89,58 @@ nav a:hover {
     color: var(--color-3);
     width: 100%;
 }
+
 .container-md {
     margin-top: 10%;
     text-align: center;
     color: var(--color-3);
 }
+
 .mb-3 {
     width: 50%;
     margin-left: 25%;
 }
 
+.botao-2 {
+    margin-top: 3%;
+    border-radius: 10%;
+    background-color: var(--color-4);
+    color: var(--color-1);
+}
+
 .botao-contato {
     margin-top: 3%;
     border-radius: 10%;
-    background-color: var(--color-3);
+    background-color: var(--color-4);
     color: var(--color-1);
 }
+
+.jumbotron {
+    margin-top: 10%;
+}
+
+input {
+    text-align: center;
+}
+.form-control option {
+    text-align: center;
+}
+.ofertas h4 {
+    color: var(--color-3);
+}
+
+.ofertas strong {
+    color: var(--color-4);
+}
+
+.form-group label {
+    color: var(--color-3);
+}
+
 /*footer*/
 footer {
     width: 100%;
-    margin-top: 300px;
+    margin-top: 100px;
     align-items: center;
     text-align: center;
 }
@@ -125,20 +151,15 @@ footer {
     padding: 0 4%;
     margin: auto;
     align-items: center;
-
-
 }
 
 .row-footer {
     display: flex;
     flex-wrap: wrap;
-
 }
 
 .footer-col {
     width: 25%;
-
-
 }
 
 .footer-col h4 {
@@ -153,12 +174,10 @@ footer {
 
 .footer-col ul {
     list-style: none;
-
 }
 
 .footer-col ul li {
     margin: -1px;
-
 }
 
 .footer-col ul li a {
@@ -167,13 +186,10 @@ footer {
     text-decoration: none;
     display: block;
     transition: all 0.3s ease;
-
-
 }
 
 .footer-col ul li a:hover {
     color: var(--color-3);
-
 }
 
 .footer-col p {
@@ -183,14 +199,10 @@ footer {
     font-weight: 300;
     display: block;
     transition: all 0.3s ease;
-
 }
 
 .footer-col ul li p {
     margin: -1px;
-
 }
-
-
 
 /*fim*/

@@ -1,50 +1,49 @@
-*{
+* {
     box-sizing: border-box;
     font-family: 'Arvo', serif;
     font-family: 'Lora', serif;
     font-family: 'Roboto', sans-serif;
-   
+
 }
-:root{
-    --color-1:#fefefe;
-    --color-2:#eadec5;
+
+:root {
+    --color-1: #fefefe;
+    --color-2: #eadec5;
     --color-3: #9658a0;
-    --color-4:#898982;
+    --color-4: #898982;
 }
+
 body {
     width: 100%;
 }
---NavBar--
-#img-logo {
-    width: 100px;
-}
+
 header {
     width: 100%;
 }
+
 .nav ul {
     text-decoration: none;
     margin-right: 10%;
     list-style: none;
 }
+
 .nav-li {
- display: inline-flex;  
-  float: inline-end;
-  list-style: none;
-    
-   
+    display: inline-flex;
+    float: inline-end;
+    list-style: none;
 }
+
 .nav-a {
-    text-transform: uppercase; 
+    text-transform: uppercase;
     padding: 20px;
     margin-top: 0;
     text-decoration: none;
-    color: var(--color-3)   
+    color: var(--color-3)
 }
 
-nav a:hover{
+nav a:hover {
     color: var(--color-4);
     font-weight: bold;
-   
 }
 
 .nav-header {
@@ -53,15 +52,18 @@ nav a:hover{
     width: 100%;
     background-color: var(--color-1);
 }
-.navbar h5{
+
+.navbar h5 {
     display: flex;
     color: black;
-    text-transform: uppercase; 
+    text-transform: uppercase;
 }
+
 .navbar img {
     display: flex;
     width: 40px;
 }
+
 #input-header {
     width: 550px;
     margin-top: 2%;
@@ -72,65 +74,61 @@ nav a:hover{
 }
 
 /*fim*/
+
 .container-md {
     margin-top: 5%;
     text-align: center;
-    color:var(--color-3);
-  
+    color: var(--color-3);
 }
 
 .container-md h3 {
     text-transform: uppercase;
 }
 
-
-
 /*Promoções*/
 
-.ofertas-home {
-  
-}
+.ofertas-home {}
+
 #ofertas-home {
     margin-top: 60px;
-   align-content: center;
-    padding:auto;
+    align-content: center;
+    padding: auto;
     padding-bottom: 10%;
     margin-bottom: 50px;
 }
+
 .container-md-destinos-internacionais {
     margin-top: 10%;
     text-align: center;
-    color:var(--color-3);
+    color: var(--color-3);
 }
 
 #h3-promocoes {
     color: var(--color-1);
     text-decoration: solid color var(--color-3);
     display: flex;
-    text-transform: uppercase;
     justify-content: center;
     text-align: center;
     margin-top: 8%;
     margin-bottom: 2%;
     font-size: xx-large;
-    background-color: var(--color-3);
+    background-color: var(--color-4);
 }
 
 strong {
-    color:var(--color-3);
+    color: var(--color-3);
     text-align: center;
-  
-  
 }
 
 .card-titulo {
     color: var(--color-3);
     text-transform: uppercase;
-   
 }
+
 #img-card {
     float: right;
 }
+
 #botao-card-promo {
     display: flex;
     flex-wrap: wrap;
@@ -139,116 +137,113 @@ strong {
     align-items: stretch;
     text-align: center;
     justify-content: center;
-   border-radius: 5%;
-   border-color: var(--color-3);
-  margin-top: -8px;
-   background: var(--color-1);
+    border-radius: 5%;
+    border-color: var(--color-3);
+    margin-top: -8px;
+    background: var(--color-1);
 }
+
 #botao-card-promo a {
     color: var(--color-3);
     text-transform: uppercase;
-
 }
+
 .card-text {
     margin-top: -10px;
     margin-bottom: 5px;
-  
-   
 }
 
 .card-text-promo {
-    color:red;
+    color: red;
     text-transform: uppercase;
-   
 }
 
 
 /*footer*/
- footer {
+footer {
     width: 100%;
     margin-top: 300px;
     align-items: center;
     text-align: center;
- }
+}
+
 .container-footer {
-  
+
     max-width: 1400px;
     padding: 0 4%;
-    margin:auto;
+    margin: auto;
     align-items: center;
-   
-
 }
+
 .row-footer {
     display: flex;
-    flex-wrap:wrap;
-
+    flex-wrap: wrap;
 }
+
 .footer-col {
     width: 25%;
-    
-
 }
+
 .footer-col h4 {
     font-size: 18px;
     color: black;
-    margin-bottom:20px;
-    position:relative;
-    text-transform:uppercase;
+    margin-bottom: 20px;
+    position: relative;
+    text-transform: uppercase;
     margin-left: 36px;
     margin-top: 10%;
 }
+
 .footer-col ul {
     list-style: none;
 
 }
+
 .footer-col ul li {
-    margin:-1px ;
-    
+    margin: -1px;
+
 }
+
 .footer-col ul li a {
-    font-size:15px ;
+    font-size: 15px;
     color: var(--color-3);
     text-decoration: none;
     display: block;
     transition: all 0.3s ease;
-  
-   
 }
+
 .footer-col ul li a:hover {
     color: var(--color-3);
-  
 }
-.footer-col  p {
-    font-size:15px ;
+
+.footer-col p {
+    font-size: 15px;
     color: var(--color-3);
     text-decoration: none;
     font-weight: 300;
     display: block;
     transition: all 0.3s ease;
-  
 }
+
 .footer-col ul li p {
-    margin:-1px ;
-    
+    margin: -1px;
 }
 
 #slide {
-    
     width: 960px;
     margin: 0 auto;
 }
- 
+
 #banner {
     margin-top: 10%;
     position: relative;
     width: 960px;
     height: 480px;
     overflow: hidden;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.25);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
     border: 1px solid #999;
 }
- 
+
 #wrapper {
     position: absolute;
     top: 0;
@@ -256,7 +251,7 @@ strong {
     height: 100%;
     font-size: 0;
 }
- 
+
 .slide {
     display: inline-block;
     height: 100%;
